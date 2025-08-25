@@ -1,171 +1,168 @@
-# 🚀 Crypto CTF Framework - Advanced ML-Powered Solver
+# Advanced Crypto CTF Framework - ML-Powered Solver
 
-<div align="center">
+[![Python](https://img.shields.io/badge/python-v3.9+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![ML](https://img.shields.io/badge/ML-Expert%20Learning-orange.svg)]()
 
-![Python](https://img.shields.io/badge/python-v3.9+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![ML](https://img.shields.io/badge/ML-Expert%20Learning-orange.svg)
+**A cutting-edge Machine Learning framework that solves cryptography CTF challenges**  
+**by learning from professional writeups and applying expert techniques.**
 
-**Un framework avanzado de Machine Learning que resuelve desafíos CTF de criptografía**  
-**aprendiendo de writeups profesionales y aplicando técnicas expertas.**
+[Features](#features) • 
+[Installation](#installation) • 
+[Usage](#usage) • 
+[Expert ML](#expert-ml-system) • 
+[API](#api-reference)
 
-[🎯 Características](#-características-principales) • 
-[🚀 Instalación](#-instalación-rápida) • 
-[📖 Uso](#-uso) • 
-[🧠 Expert ML](#-sistema-expert-ml) • 
-[🔧 API](#-api-y-herramientas)
+## Features
 
-</div>
+### Expert ML System
+- **Learn from professional writeups** from real CTFs (SekaiCTF, DownUnderCTF, etc.)
+- **Extract techniques and patterns** from cryptography experts
+- **Predict resolution strategies** for complex challenges
+- **Continuous improvement** with fresh professional data
 
-## 🎯 Características Principales
+### Automated Challenge Resolution
+- **Input**: Text files, network connections (netcat)
+- **Output**: Direct flags in `crypto{...}` or `CTF{...}` format
+- **Support**: RSA, AES, Caesar, Vigenere, XOR, Hash, ECC and more
+- **Accuracy**: 55.7% with 231 professional writeups
 
-### 🧠 **Sistema Expert ML Revolucionario**
-- **Aprende de writeups profesionales** de CTFs reales (SekaiCTF, etc.)
-- **Extrae técnicas y patrones** de expertos en criptografía
-- **Predice estrategias de resolución** para desafíos complejos
-- **Mejora continua** con nuevos datos profesionales
+### Advanced Modular Architecture
+- **Plugin System**: Extensible with new algorithms
+- **ML Pipeline**: Automatic challenge classification
+- **Parallel Execution**: Optimized concurrent resolution
+- **Security Layer**: Integrated validation and sandboxing
 
-### ⚡ **Resolución Automática Inteligente**
-- **Entrada**: Archivos de texto, conexiones de red (netcat)
-- **Salida**: Flags directas en formato `crypto{...}` o `CTF{...}`
-- **Soporte**: RSA, AES, César, Vigenère, XOR, Hash, ECC y más
-- **Precisión**: 72.7% con datos profesionales de SekaiCTF
+## Installation
 
-### 🔧 **Arquitectura Modular Avanzada**
-- **Plugin System**: Extensible con nuevos algoritmos
-- **ML Pipeline**: Clasificación automática de desafíos
-- **Parallel Execution**: Resolución concurrente optimizada
-- **Security Layer**: Validación y sandboxing integrado
-
-## 🚀 Instalación Rápida
-
-### Prerequisitos
+### Prerequisites
 ```bash
-# Python 3.9+ requerido
+# Python 3.9+ required
 python --version  # >= 3.9.0
 ```
 
-### Instalación Completa
+### Quick Installation
 ```bash
-# 1. Clonar el repositorio
+# 1. Clone repository
 git clone https://github.com/iNeenah/Framework-Crypto-CTF.git
 cd Framework-Crypto-CTF
 
-# 2. Crear entorno virtual
+# 2. Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# o
+# or
 venv\Scripts\activate     # Windows
 
-# 3. Instalar dependencias
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Verificar instalación
+# 4. Verify installation
 python main.py
 ```
 
-### Instalación con Docker (Recomendado)
+### Docker Installation (Recommended)
 ```bash
 docker build -t crypto-ctf-framework .
 docker run -it crypto-ctf-framework
 ```
 
-## 📖 Uso
+## Usage
 
-### 🎮 **Inicio Rápido - Interfaz Principal**
+### Quick Start - Main Interface
 ```bash
-# Ejecutar framework completo
+# Run complete framework
 python main.py
 ```
 
-**Menú Principal:**
+**Main Menu:**
 ```
-🎯 CRYPTO CTF FRAMEWORK - GESTIÓN COMPLETA
+CRYPTO CTF FRAMEWORK - COMPLETE MANAGEMENT
 ==========================================
 
-1. 📁 Agregar nuevo desafío
-2. 🧠 Entrenar IA con desafíos actuales  
-3. 🔧 Resolver desafío específico
-4. 🔄 Entrenamiento automático completo
-5. 📊 Ver estadísticas del framework
-6. 🧪 Probar IA con test challenges
-7. 📋 Listar desafíos subidos
-8. 🎓 EXPERT ML: Aprender de writeups profesionales
-9. 🔮 EXPERT ML: Predecir con conocimiento experto
-10. ❌ Salir
+1. Add new challenge
+2. Train AI with current challenges  
+3. Solve specific challenge
+4. Complete automatic training
+5. View framework statistics
+6. Test AI with test challenges
+7. List uploaded challenges
+8. EXPERT ML: Learn from professional writeups
+9. EXPERT ML: Predict with expert knowledge
+10. EXPERT ML: Auto-update with new writeups
+11. Exit
 ```
 
-### 🧠 **Sistema Expert ML**
+### Expert ML System
 
-#### Entrenar con Writeups Profesionales
+#### Train with Professional Writeups
 ```bash
-# Descargar writeups de SekaiCTF automáticamente
-python framework/ml/download_sekai_writeups.py
+# Download writeups automatically
+python framework/ml/download_professional_writeups.py
 
-# Entrenar con writeups descargados
-python framework/ml/expert_ml_framework.py --learn-dir "data/sekai_writeups"
+# Train with downloaded writeups
+python framework/ml/expert_ml_framework.py --learn-dir "data/expert_writeups"
 
-# Agregar writeup individual
-python framework/ml/expert_ml_framework.py --learn-file "mi_writeup.txt"
+# Add individual writeup
+python framework/ml/expert_ml_framework.py --learn-file "my_writeup.txt"
 ```
 
-#### Resolver con Conocimiento Experto
+#### Solve with Expert Knowledge
 ```bash
-# Análisis completo con estrategia experta
-python framework/ml/expert_ml_framework.py --solve-verbose "desafio.txt"
+# Complete analysis with expert strategy
+python framework/ml/expert_ml_framework.py --solve-verbose "challenge.txt"
 
-# Solo predicción (sin resolución)
-python framework/ml/expert_ml_framework.py --analyze "desafio.txt"
+# Prediction only (no resolution)
+python framework/ml/expert_ml_framework.py --analyze "challenge.txt"
 
-# Ver estado del modelo
+# View model status
 python framework/ml/expert_ml_framework.py --status
 ```
 
-### 🎯 **Resolución Directa de Desafíos**
+### Direct Challenge Resolution
 
-#### Desde Archivo
+#### From File
 ```bash
 # RSA Challenge
 echo "n=143, e=7, c=123" > rsa_challenge.txt
-python main.py  # Opción 3 -> resolver desafío
+python main.py  # Option 3 -> solve challenge
 # Output: crypto{factorized_rsa}
 ```
 
-#### Desde Red (Netcat)
+#### From Network (Netcat)
 ```bash
-# Agregar desafío de red
+# Add network challenge
 python framework/core/add_challenge.py --network "challenge.server.com:1337"
-# El framework se conectará automáticamente
+# Framework will connect automatically
 ```
 
 #### Batch Processing
 ```bash
-# Procesar múltiples desafíos automáticamente
+# Process multiple challenges automatically
 mkdir challenges/uploaded/
 cp *.txt challenges/uploaded/
-python main.py  # Opción 4 -> entrenamiento automático
+python main.py  # Option 4 -> automatic training
 ```
 
-## 🧠 Sistema Expert ML
+## Expert ML System
 
-### 📚 **Cómo Funciona**
+### How It Works
 
-1. **Análisis de Writeups**: Extrae técnicas, herramientas y patrones
-2. **Clasificación ML**: RandomForest entrenado con datos profesionales
-3. **Predicción Estratégica**: Sugiere técnicas basadas en expertos
-4. **Mejora Continua**: Re-entrena automáticamente con nuevos datos
+1. **Writeup Analysis**: Extracts techniques, tools and patterns
+2. **ML Classification**: RandomForest trained with professional data
+3. **Strategic Prediction**: Suggests techniques based on experts
+4. **Continuous Improvement**: Re-trains automatically with new data
 
-### 🎯 **Datos de Entrenamiento Actuales**
-- **34 writeups profesionales** de SekaiCTF 2023-2024
-- **72.7% de precisión** en clasificación
-- **4 tipos principales**: crypto, hash, rsa, symmetric
-- **Técnicas detectadas**: factorization, frequency analysis, small exponent, etc.
+### Current Training Data
+- **231 professional writeups** from world-class sources
+- **55.7% accuracy** in classification
+- **5 main types**: crypto, hash, rsa, symmetric, elliptic_curve
+- **Detected techniques**: factorization, frequency analysis, coppersmith, etc.
 
-### 🔬 **Ejemplo de Predicción**
+### Prediction Example
 ```python
-# Input: Desafío RSA con números pequeños
-# Output del Expert ML:
+# Input: RSA challenge with small numbers
+# Expert ML Output:
 {
   "predicted_type": "rsa",
   "confidence": 0.892,
@@ -175,9 +172,9 @@ python main.py  # Opción 4 -> entrenamiento automático
 }
 ```
 
-## 🔧 API y Herramientas
+## API Reference
 
-### 📦 **Módulos Principales**
+### Main Modules
 
 ```python
 # Framework Core
@@ -186,131 +183,128 @@ from framework.core import add_challenge
 
 # Expert ML System  
 from framework.ml import expert_ml_framework
-from framework.ml import download_sekai_writeups
+from framework.ml import download_professional_writeups
 
-# Herramientas Auxiliares
+# Auxiliary Tools
 from tools import auto_train_framework
 from tools import universal_challenge_solver
 ```
 
-### 🎯 **API Programática**
+### Programmatic API
 
 ```python
-# Resolver desafío programáticamente
+# Solve challenge programmatically
 from framework.ml.expert_ml_framework import ExpertMLFramework
 
 framework = ExpertMLFramework()
 result = framework.predict_expert_strategy(challenge_text)
 
-print(f"Tipo: {result['predicted_type']}")
-print(f"Confianza: {result['confidence']:.3f}")
-print(f"Técnicas: {result['suggested_techniques']}")
+print(f"Type: {result['predicted_type']}")
+print(f"Confidence: {result['confidence']:.3f}")
+print(f"Techniques: {result['suggested_techniques']}")
 ```
 
-## 📊 Estadísticas y Rendimiento
+## Performance Statistics
 
-### 🏆 **Métricas de Rendimiento**
-- **Precisión ML**: 72.7% (con writeups profesionales)
-- **Tipos de Crypto**: 15+ algoritmos soportados
-- **Velocidad**: < 5 segundos promedio por desafío
-- **Escalabilidad**: Procesamiento paralelo optimizado
+### Performance Metrics
+- **ML Accuracy**: 55.7% (with 231 professional writeups)
+- **Crypto Types**: 15+ supported algorithms
+- **Speed**: < 5 seconds average per challenge
+- **Scalability**: Optimized parallel processing
 
-### 📈 **Casos de Éxito**
-- ✅ **RSA Factorization**: 95% éxito en módulos < 1024 bits
-- ✅ **Classical Crypto**: 98% éxito (César, Vigenère, XOR)
-- ✅ **Hash Challenges**: 87% éxito con rainbow tables
-- ✅ **Network Challenges**: 82% éxito con automatización
+### Success Cases
+- **RSA Factorization**: 95% success in modules < 1024 bits
+- **Classical Crypto**: 98% success (Caesar, Vigenere, XOR)
+- **Hash Challenges**: 87% success with rainbow tables
+- **Network Challenges**: 82% success with automation
 
-## 🛠️ Desarrollo y Contribución
+## Development and Contribution
 
-### 🏗️ **Arquitectura del Sistema**
+### System Architecture
 ```
 Framework-Crypto-CTF/
-├── framework/              # Framework principal
-│   ├── core/              # Módulos centrales
+├── framework/              # Main framework
+│   ├── core/              # Core modules
 │   │   ├── manage_ctf_framework.py
 │   │   └── add_challenge.py
-│   ├── ml/                # Sistema ML Expert
+│   ├── ml/                # Expert ML System
 │   │   ├── expert_ml_framework.py
-│   │   └── download_sekai_writeups.py
-│   ├── plugins/           # Plugins de algoritmos
-│   ├── cli/               # Interfaz de línea de comandos
-│   └── utils/             # Utilidades compartidas
-├── tools/                 # Herramientas auxiliares
-├── data/                  # Datos de entrenamiento
-├── challenges/            # Desafíos y soluciones
-├── models/                # Modelos ML entrenados
-└── tests/                 # Tests automatizados
+│   │   └── download_professional_writeups.py
+│   ├── plugins/           # Algorithm plugins
+│   ├── cli/               # Command line interface
+│   └── utils/             # Shared utilities
+├── tools/                 # Auxiliary tools
+├── data/                  # Training data
+├── challenges/            # Challenges and solutions
+├── models/                # Trained ML models
+└── tests/                 # Automated tests
 ```
 
-### 🔧 **Extensibilidad**
+### Extensibility
 
-#### Agregar Nuevo Plugin
+#### Add New Plugin
 ```python
-# framework/plugins/mi_algoritmo.py
-class MiAlgoritmoPlugin:
+# framework/plugins/my_algorithm.py
+class MyAlgorithmPlugin:
     def can_handle(self, challenge_data):
-        # Retorna confianza 0.0-1.0
-        return 0.8 if "mi_patron" in challenge_data else 0.0
+        # Return confidence 0.0-1.0
+        return 0.8 if "my_pattern" in challenge_data else 0.0
     
     def solve(self, challenge_data):
-        # Implementa la solución
-        return {"flag": "crypto{mi_solucion}", "success": True}
+        # Implement solution
+        return {"flag": "crypto{my_solution}", "success": True}
 ```
 
-#### Agregar Técnica de Extracción
+#### Add Extraction Technique
 ```python
-# En expert_ml_framework.py
-def _extract_mi_tecnica(self, text):
-    if "mi_patron" in text.lower():
-        return ["mi_tecnica_experta"]
+# In expert_ml_framework.py
+def _extract_my_technique(self, text):
+    if "my_pattern" in text.lower():
+        return ["my_expert_technique"]
     return []
 ```
 
-## 📚 Recursos y Documentación
+## Resources and Documentation
 
-### 🎓 **Writeups Soportados**
-- **SekaiCTF 2023-2024**: Automáticamente descargables
-- **Formato personalizado**: Markdown, Python, texto plano
-- **Estructura profesional**: Metadata automática
+### Supported Writeups
+- **Professional CTFs**: Automatically downloadable from major competitions
+- **Custom format**: Markdown, Python, plain text
+- **Professional structure**: Automatic metadata extraction
 
-### 📖 **Documentación Completa**
-- [📋 Guía de Instalación](docs/installation.md)
-- [🧠 Tutorial Expert ML](docs/expert-ml-tutorial.md)
-- [🔧 API Reference](docs/api-reference.md)
-- [🎯 Ejemplos Avanzados](docs/examples.md)
+### Complete Documentation
+- Installation Guide
+- Expert ML Tutorial  
+- API Reference
+- Advanced Examples
 
-### 🤝 **Contribuir**
+### Contributing
 ```bash
-# 1. Fork del repositorio
-# 2. Crear rama feature
-git checkout -b feature/mi-mejora
+# 1. Fork repository
+# 2. Create feature branch
+git checkout -b feature/my-improvement
 
-# 3. Commit y push
-git commit -m "Add: nueva funcionalidad"
-git push origin feature/mi-mejora
+# 3. Commit and push
+git commit -m "Add: new functionality"
+git push origin feature/my-improvement
 
-# 4. Crear Pull Request
+# 4. Create Pull Request
 ```
 
-## 📄 Licencia
+## License
 
-Este proyecto está licenciado bajo MIT License - ver [LICENSE](LICENSE) para detalles.
+This project is licensed under MIT License - see [LICENSE](LICENSE) for details.
 
-## 🙏 Reconocimientos
+## Acknowledgments
 
-- **SekaiCTF Team**: Por los writeups profesionales de alta calidad
-- **Cryptography Community**: Por técnicas y algoritmos open source  
-- **CTF Players**: Por inspiración y casos de uso reales
+- **Professional CTF Teams**: For high-quality writeups and challenges
+- **Connor McCartney**: For exceptional cryptography expertise and writeups
+- **DownUnderCTF Team**: For world-class competition challenges
+- **SekaiCTF Team**: For international-level professional writeups
+- **Cryptography Community**: For open source techniques and algorithms  
+- **CTF Players**: For inspiration and real-world use cases
 
 ---
 
-<div align="center">
+**Made with dedication by [iNeenah](https://github.com/iNeenah)**
 
-**🌟 Si te gusta este proyecto, dale una estrella ⭐**
-
-**💬 ¿Preguntas? Abre un [Issue](https://github.com/iNeenah/Framework-Crypto-CTF/issues)**
-
-**🚀 Hecho con ❤️ por [iNeenah](https://github.com/iNeenah)**
-
-</div>
+**Questions? Open an [Issue](https://github.com/iNeenah/Framework-Crypto-CTF/issues)**

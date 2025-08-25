@@ -1,0 +1,19 @@
+# Professional Writeups Sources
+# Add URLs of professional CTF writeups (one per line)
+# The system will automatically download and learn from these sources
+
+# GitHub Repositories (Official CTF Challenges)
+https://github.com/DownUnderCTF/Challenges_2024_Public/tree/main/crypto
+https://github.com/DownUnderCTF/Challenges_2023_Public/tree/main/crypto
+
+# Connor McCartney Writeups (World-class crypto expert)
+https://connor-mccartney.github.io/cryptography/rsa/baby-rsa-DICECTF-2022
+https://connor-mccartney.github.io/cryptography/ecc/starter-ecc-CRYPTO-CTF-2022
+https://connor-mccartney.github.io/cryptography/diffie-hellman/logloglog-Angstrom-CTF-2022
+
+# Professional Writeup Websites
+https://thebusfactor-writeups.vercel.app/posts/2025-07-14-LowkeyRSA-writeup
+
+# Add your own writeup URLs below:
+# https://example.com/your-writeup
+# https://github.com/yourname/ctf-writeups/tree/main/crypto

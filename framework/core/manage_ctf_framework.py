@@ -19,36 +19,37 @@ from datetime import datetime
 
 
 def show_main_menu():
-    """Mostrar menú principal"""
+    """Display main menu"""
     print("""
-🎯 CRYPTO CTF FRAMEWORK - GESTIÓN COMPLETA
+CRYPTO CTF FRAMEWORK - COMPLETE MANAGEMENT
 ==========================================
 
-1. 📁 Agregar nuevo desafío
-2. 🧠 Entrenar IA con desafíos actuales
-3. 🔧 Resolver desafío específico
-4. 🔄 Entrenamiento automático completo
-5. 📊 Ver estadísticas del framework
-6. 🧪 Probar IA con test challenges
-7. 📋 Listar desafíos subidos
-8. 🎓 EXPERT ML: Aprender de writeups profesionales
-9. 🔮 EXPERT ML: Predecir con conocimiento experto
-10. ❌ Salir
+1. Add new challenge
+2. Train AI with current challenges
+3. Solve specific challenge
+4. Complete automatic training
+5. View framework statistics
+6. Test AI with test challenges
+7. List uploaded challenges
+8. EXPERT ML: Learn from professional writeups
+9. EXPERT ML: Predict with expert knowledge
+10. EXPERT ML: Auto-update with new writeups
+11. Exit
 
-Selecciona una opción (1-10):""")
+Select an option (1-11):""")
 
 
 def add_challenge():
-    """Agregar nuevo desafío interactivamente"""
-    print("\n🎯 AGREGAR NUEVO DESAFÍO")
-    print("=" * 30)
+    """Add new challenge interactively"""
+    print("\nADD NEW CHALLENGE")
+    print("=" * 18)
     
-    print("Opciones:")
-    print("1. Crear desde plantilla")
-    print("2. Desde archivo existente")
-    print("3. Desafío de red (host:puerto)")
+    print("Options:")
+    print("1. Create from template")
+    print("2. From existing file")
+    print("3. Network challenge (host:port)")
     
-    choice = input("\nSelecciona (1-3): ").strip()
+    choice = input("\nSelect (1-3): ").strip()
     
     if choice == "1":
         os.system("python framework/core/add_challenge.py --interactive")
@@ -279,6 +280,76 @@ para resolver desafíos complejos de criptografía.
         print("❌ Opción inválida")
 
 
+def auto_update_expert_ml():
+    """Actualización automática Expert ML con nuevos writeups"""
+    print("\n🔄 EXPERT ML - ACTUALIZACIÓN AUTOMÁTICA")
+    print("=" * 40)
+    
+    print("""Este modo busca automáticamente nuevos writeups en writeupsSolutions.txt
+y actualiza el modelo Expert ML con conocimiento fresco.
+    
+🎯 ¿Qué hace?
+- Detecta archivo writeupsSolutions.txt
+- Descarga writeups profesionales automáticamente
+- Re-entrena modelo con nuevos datos
+- Mantiene el conocimiento actualizado""")
+    
+    # Verificar si existe writeupsSolutions.txt
+    writeups_file = Path("challenges/uploaded/writeupsSolutions.txt")
+    
+    if not writeups_file.exists():
+        print(f"\n❌ No se encontró: {writeups_file}")
+        print("💡 Crea el archivo y agrega URLs de writeups línea por línea")
+        return
+    
+    print(f"\n✅ Archivo detectado: {writeups_file}")
+    
+    # Contar líneas/URLs
+    with open(writeups_file, 'r', encoding='utf-8') as f:
+        urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+    
+    print(f"📊 URLs encontradas: {len(urls)}")
+    
+    if len(urls) == 0:
+        print("⚠️  No hay URLs válidas en el archivo")
+        return
+    
+    # Mostrar algunas URLs
+    print("\n📋 Algunas URLs detectadas:")
+    for i, url in enumerate(urls[:3]):
+        print(f"   {i+1}. {url[:60]}...")
+    if len(urls) > 3:
+        print(f"   ... y {len(urls)-3} más")
+    
+    # Confirmar descarga
+    proceed = input("\n🚀 ¿Proceder con descarga y entrenamiento? (s/N): ").strip().lower()
+    
+    if proceed in ['s', 'si', 'sí', 'y', 'yes']:
+        print("\n🔽 Iniciando descarga de writeups profesionales...")
+        print("-" * 50)
+        
+        # Ejecutar descargador profesional
+        os.system(f'python framework/ml/download_professional_writeups.py "{writeups_file}"')
+        
+        print("\n🧠 Re-entrenando modelo Expert ML...")
+        print("-" * 40)
+        
+        # Re-entrenar con writeups descargados
+        os.system('python framework/ml/expert_ml_framework.py --learn-dir "data/expert_writeups"')
+        
+        print("\n📊 Verificando estado actualizado...")
+        print("-" * 35)
+        
+        # Mostrar estado final
+        os.system('python framework/ml/expert_ml_framework.py --status')
+        
+        print("\n✨ ¡Actualización Expert ML completada!")
+        print("🔥 El modelo ahora tiene conocimiento actualizado de los mejores writeups")
+        
+    else:
+        print("❌ Actualización cancelada")
+
+
 def show_quick_guide():
     """Mostrar guía rápida"""
     print("""
@@ -357,15 +428,17 @@ def main():
             elif choice == "9":
                 expert_ml_prediction()
             elif choice == "10":
+                auto_update_expert_ml()
+            elif choice == "11":
                 print("\n👋 ¡Hasta luego!")
                 break
             elif choice.lower() in ['help', 'h', '?']:
                 show_quick_guide()
             else:
-                print("❌ Opción inválida. Usa 1-10.")
+                print("❌ Opción inválida. Usa 1-11.")
             
             # Solo pedir Enter si no es salida
-            if choice != "10":
+            if choice != "11":
                 try:
                     input("\n📝 Presiona Enter para continuar...")
                 except (KeyboardInterrupt, EOFError):

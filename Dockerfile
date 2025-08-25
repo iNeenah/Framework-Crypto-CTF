@@ -1,11 +1,11 @@
-# Dockerfile para Crypto CTF Framework
+# Dockerfile for Advanced Crypto CTF Framework
 FROM python:3.9-slim
 
 LABEL maintainer="iNeenah"
-LABEL description="Advanced ML-Powered CTF Crypto Solver Framework"
+LABEL description="Advanced ML-Powered CTF Cryptography Solver Framework"
 LABEL version="1.0.0"
 
-# Instalar dependencias del sistema
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     libgmp-dev \
@@ -15,23 +15,23 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Crear directorio de trabajo
+# Set working directory
 WORKDIR /app
 
-# Copiar archivos de dependencias
+# Copy dependency files
 COPY requirements.txt .
 
-# Instalar dependencias de Python
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar código fuente
+# Copy source code
 COPY . .
 
-# Crear directorios necesarios
-RUN mkdir -p data/sekai_writeups models/expert challenges/uploaded challenges/solved
+# Create necessary directories
+RUN mkdir -p data/expert_writeups models/expert challenges/uploaded challenges/solved
 
-# Exponer puerto (si se implementa interfaz web)
+# Expose port (if web interface is implemented)
 EXPOSE 8000
 
-# Comando por defecto
+# Default command
 CMD ["python", "main.py"]

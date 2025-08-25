@@ -1,94 +1,105 @@
 #!/usr/bin/env python3
 """
-Setup script para Crypto CTF Solver
+Setup Script for Advanced Crypto CTF Framework
+Initializes directories and downloads initial training data
 """
 
-from setuptools import setup, find_packages
+import os
+import sys
+from pathlib import Path
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+def create_directory_structure():
+    """Create necessary directory structure"""
+    directories = [
+        "challenges/uploaded",
+        "challenges/extracted", 
+        "challenges/solved",
+        "data/expert_writeups",
+        "data/expert_knowledge",
+        "data/professional_writeups",
+        "data/sekai_writeups",
+        "data/models",
+        "data/training_data",
+        "data/knowledge_base",
+        "models/expert",
+        "logs",
+        "temp"
+    ]
+    
+    print("Creating directory structure...")
+    for directory in directories:
+        Path(directory).mkdir(parents=True, exist_ok=True)
+        print(f"  ✓ {directory}")
 
-setup(
-    name="crypto-ctf-solver",
-    version="0.1.0",
-    author="Crypto CTF Solver Team",
-    description="Framework inteligente para resolver desafíos de criptografía y CTF",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    packages=find_packages(),
-    classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
-        "Programming Language :: Python :: 3.11",
-        "Topic :: Security :: Cryptography",
-        "Topic :: Security",
-    ],
-    python_requires=">=3.9",
-    install_requires=[
-        # Criptografía
-        "pycryptodome>=3.18.0",
-        "gmpy2>=2.1.5",
-        "cryptography>=41.0.0",
-        
-        # Matemáticas avanzadas
-        "sympy>=1.12",
-        "numpy>=1.24.0",
-        "scipy>=1.10.0",
-        
-        # Machine Learning
-        "tensorflow>=2.13.0",
-        "torch>=2.0.0",
-        "scikit-learn>=1.3.0",
-        "pandas>=2.0.0",
-        
-        # Redes y CTF
-        "pwntools>=4.10.0",
-        "asyncio-mqtt>=0.13.0",
-        "aiohttp>=3.8.0",
-        
-        # Compresión de archivos
-        "py7zr>=0.20.0",
-        "rarfile>=4.0",
-        "patool>=1.12",
-        
-        # Utilidades
-        "click>=8.1.0",
-        "colorama>=0.4.6",
-        "tqdm>=4.65.0",
-        "rich>=13.4.0",
-        "pydantic>=2.0.0",
-        "python-magic>=0.4.27",
-        
-        # Testing y desarrollo
-        "pytest>=7.4.0",
-        "pytest-asyncio>=0.21.0",
-        "pytest-cov>=4.1.0",
-        "black>=23.7.0",
-        "flake8>=6.0.0",
-        "mypy>=1.5.0",
-    ],
-    extras_require={
-        "sage": ["sage>=10.0"],  # Opcional para matemáticas muy avanzadas
-        "dev": [
-            "pytest>=7.4.0",
-            "pytest-asyncio>=0.21.0",
-            "pytest-cov>=4.1.0",
-            "black>=23.7.0",
-            "flake8>=6.0.0",
-            "mypy>=1.5.0",
-            "pre-commit>=3.3.0",
-        ],
-    },
-    entry_points={
-        "console_scripts": [
-            "crypto-ctf-solver=src.main:main",
-        ],
-    },
-    include_package_data=True,
-    zip_safe=False,
-)
+def check_dependencies():
+    """Check if required dependencies are installed"""
+    print("\\nChecking dependencies...")
+    
+    required_packages = [
+        "numpy",
+        "scikit-learn", 
+        "pandas",
+        "requests",
+        "beautifulsoup4",
+        "pycryptodome",
+        "gmpy2"
+    ]
+    
+    missing_packages = []
+    
+    for package in required_packages:
+        try:
+            __import__(package)
+            print(f"  ✓ {package}")
+        except ImportError:
+            print(f"  ✗ {package} (missing)")
+            missing_packages.append(package)
+    
+    if missing_packages:
+        print(f"\\nMissing packages: {', '.join(missing_packages)}")
+        print("Install with: pip install -r requirements.txt")
+        return False
+    
+    return True
+
+def initialize_expert_ml():
+    """Initialize Expert ML system"""
+    print("\\nInitializing Expert ML system...")
+    
+    try:
+        from framework.ml.expert_ml_framework import ExpertMLFramework
+        framework = ExpertMLFramework()
+        print("  ✓ Expert ML Framework initialized")
+        return True
+    except Exception as e:
+        print(f"  ✗ Error initializing Expert ML: {e}")
+        return False
+
+def main():
+    """Main setup function"""
+    print("=== Advanced Crypto CTF Framework Setup ===")
+    print("Initializing framework components...")
+    
+    # Create directories
+    create_directory_structure()
+    
+    # Check dependencies
+    deps_ok = check_dependencies()
+    if not deps_ok:
+        print("\\n❌ Setup incomplete - missing dependencies")
+        sys.exit(1)
+    
+    # Initialize Expert ML
+    ml_ok = initialize_expert_ml()
+    if not ml_ok:
+        print("\\n⚠️  Expert ML initialization failed")
+    
+    print("\\n🎉 Setup completed successfully!")
+    print("\\nNext steps:")
+    print("1. Add writeup URLs to challenges/uploaded/writeupsSolutions.txt")
+    print("2. Run: python main.py")
+    print("3. Select option 10 to auto-update Expert ML")
+    print("4. Start solving challenges!")
+
+if __name__ == "__main__":
+    main()

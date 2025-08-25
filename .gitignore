@@ -122,7 +122,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Crypto CTF Solver specific
+# Advanced Crypto CTF Framework specific
 logs/
 challenges/uploaded/*
 !challenges/uploaded/.gitkeep
@@ -137,14 +137,15 @@ data/training_data/*
 data/knowledge_base/*
 !data/knowledge_base/.gitkeep
 
-# Expert ML specific
+# Expert ML System specific
 models/expert/*.pkl
-data/sekai_writeups/sekai*.md
-data/sekai_writeups/sekai*.py
+data/expert_writeups/*.md
+data/expert_writeups/*.py
+data/expert_writeups/*.txt
 data/expert_knowledge/*.json
-data/expert_writeups/*
+data/professional_writeups/*
 
-# Configuración local
+# Local configuration
 config/local.json
 .env.local
 
@@ -153,6 +154,22 @@ config/local.json
 *.temp
 temp/
 tmp/
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # IDE files
 .vscode/

@@ -1,0 +1,60 @@
+{
+  "name": "Advanced Crypto CTF Framework",
+  "version": "1.0.0",
+  "description": "ML-powered cryptography CTF solver that learns from professional writeups",
+  "author": "iNeenah",
+  "license": "MIT",
+  "homepage": "https://github.com/iNeenah/Framework-Crypto-CTF",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iNeenah/Framework-Crypto-CTF.git"
+  },
+  "keywords": [
+    "cryptography",
+    "ctf",
+    "machine-learning",
+    "security",
+    "automation",
+    "expert-system",
+    "writeups",
+    "crypto-solver"
+  ],
+  "languages": [
+    "Python"
+  ],
+  "frameworks": [
+    "scikit-learn",
+    "TensorFlow",
+    "PyTorch"
+  ],
+  "features": [
+    "Expert ML System",
+    "Professional Writeup Learning",
+    "Automatic Challenge Resolution",
+    "Multi-algorithm Support",
+    "Continuous Learning",
+    "Professional CTF Integration"
+  ],
+  "supported_algorithms": [
+    "RSA",
+    "AES",
+    "ECC",
+    "Diffie-Hellman",
+    "Hash functions",
+    "Classical ciphers",
+    "Coppersmith attacks",
+    "Small roots techniques"
+  ],
+  "training_sources": [
+    "Connor McCartney (79 writeups)",
+    "DownUnderCTF (105 writeups)",
+    "SekaiCTF (30 writeups)",
+    "Professional Collection (37 writeups)"
+  ],
+  "metrics": {
+    "total_writeups": 231,
+    "ml_accuracy": "55.7%",
+    "supported_crypto_types": 5,
+    "average_solve_time": "< 5 seconds"
+  }
+}
