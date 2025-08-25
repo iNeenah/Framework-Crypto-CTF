@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "created": "2025-08-25T00:03:35.183242",
+  "total_samples": 11,
+  "samples": [
+    {
+      "content": "CRYPTOHACK CHALLENGE: Small RSA\n\nI've implemented RSA encryption, but I think I made it secure by using small numbers for testing.\n\nHere are my RSA parameters:\nn = 77\ne = 7\nc = 12\n\nThe message was a small integer. Can you decrypt it?\n\nAdditional info:\n- This is a textbook RSA implementation\n- No padding was used\n- The plaintext is a small positive integer\n- Convert the result to ASCII to get the flag character\n\nFlag format: The decrypted character is part of a larger flag",
+      "challenge_type": "rsa",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\advanced_rsa_challenge.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.043062",
+        "detected_type": "rsa",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "Título: Baby Time Capsule - RSA Small Exponent Attack\nCTF: Baby Time Capsule\nCategoría: Crypto - RSA\n\nDescripción:\nQubit Enterprises is giving out \"time capsules\" with messages encrypted by 1024-bit RSA.\nThey use a small exponent (e = 5) and generate new keys for each encryption.\nThis allows for a Håstad's attack using Chinese Remainder Theorem.\n\nVulnerability Analysis:\n- Small exponent e = 5\n- Same message encrypted with different RSA keys\n- Multiple ciphertexts available for the same plaintext\n- Vulnerable to Håstad's broadcast attack\n\nServer Code Analysis:\nclass TimeCapsule():\n    def __init__(self, msg):\n        self.msg = msg\n        self.bit_size = 1024\n        self.e = 5  # Small exponent vulnerability!\n\n    def _get_new_pubkey(self):\n        # Generates new p, q each time\n        p = getPrime(self.bit_size // 2)\n        q = getPrime(self.bit_size // 2)\n        n = p * q\n        return n, self.e\n\nAttack Method:\n1. Request multiple time capsules (same message, different keys)\n2. Collect e=5 different (ciphertext, modulus) pairs\n3. Use Chinese Remainder Theorem to find m^5 mod (n1*n2*n3*n4*n5)\n4. Calculate 5th root to recover original message\n\nMathematical Background:\n- If m^e < n1*n2*...*ne, then m^e mod (n1*n2*...*ne) = m^e\n- We can directly compute the eth root of the result\n\nFLAG format: HTB{...}",
+      "challenge_type": "rsa",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\baby_time_capsule_challenge.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.070474",
+        "detected_type": "rsa",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "Este es un desafío de ejemplo para probar el framework.\n\nMensaje cifrado: SGVsbG8gTXVuZG8h\n\nPista: Este mensaje está codificado con una técnica muy común en CTFs.\n\nFLAG: ejemplo_resuelto",
+      "challenge_type": "unknown",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\ejemplo_desafio.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.090494",
+        "detected_type": "unknown",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "Título: Desafío CTF Real\nCTF: [Nombre del CTF]\nCategoría: Crypto\n\nDescripción:\n[Aquí va la descripción del desafío]\n\nDatos cifrados:\n[Aquí va el texto/datos cifrados que quieres resolver]\n\nPistas:\n- [Pista 1 si la hay]\n- [Pista 2 si la hay]\n\nInformación adicional:\n[Cualquier dato extra]",
+      "challenge_type": "unknown",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\mi_desafio_ctf.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.096665",
+        "detected_type": "unknown",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "Título: Mi Desafío Personalizado\n\nDescripción: Aquí describes el desafío\n\nMensaje cifrado: [AQUÍ VA EL TEXTO CIFRADO]\n\nPistas:\n- Pista 1: Información útil\n- Pista 2: Más información\n\nFLAG: mi_flag_personalizada",
+      "challenge_type": "unknown",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\plantilla_desafio.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.110912",
+        "detected_type": "unknown",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "Título: RSA Challenge - CTF Real\nCTF: Desafío Real de Criptografía\nCategoría: Crypto - RSA\n\nDescripción:\nEste es un desafío RSA donde necesitamos factorizar n para obtener la flag.\nEl código fuente muestra que se generaron dos primos p y q de manera específica.\n\nParámetros RSA:\nn = 15741249392841143628804007865707686094685975948917604970593260099545817215948030796794903893468603448631757177648536559458343471603774038872737262475012063639073274245711075727980945469996957909583093122675525385955340919581471815622990382495949949999432058101741772049488391007854833025908552835927556170649570709205479273590753716598258512260364480544327596493581216372252081600831995908448994713009002739057987305824377407502785839069363106805498790634939053720249362547597510353242607392100406718100941543702508031262420746066084015147227188235145859102907770165601728469936131160457177198196935697488382502290991684795053647712145810675204613608677949727137530560424113484831447064638676480805834057788107418186984926038382125347482485704122716832981172002830340197\n\ne = 65537\n\nc = 7951806355620854235385536778341677125999612836586887097498292238694094503657616465173492696670117341378809487396941360126761138991021579714185812237270688562832296003451272127920406264760858867890183527834889982898626546076082894084509889186300541179410842105907982016933179514352326956234028036871944367839678089851242705506022346925780626249346631969857405869419184858251510303573626977440099183055593193255121938184652660336377658090818633589919541064487256168576943941154239985756078961578849086245854088565963889698519099047223353012728622729542226212649622555736707376350591441656593628357050860551616958463237767446604982129000948041106075854445082284229555733783160527841109165327439083811505812919741977048259423811897989531562409069378332169481028636598206064\n\nPistas:\n- Los primos p y q se generaron de manera específica usando bits aleatorios\n- p = (a << 1024) + (b << 512) + c donde a, b, c son de 256 bits\n- Esto pod",
+      "challenge_type": "rsa",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\rsa_ctf_real.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.117930",
+        "detected_type": "rsa",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "CRYPTOHACK CHALLENGE: Classic Vigenère\n\nI've encrypted my secret message using the classic Vigenère cipher.\n\nCiphertext: LXFOPVEFRNHR\nKey hint: The key is a 3-letter word related to \"CRYPTO\"\n\nAdditional clues:\n- The plaintext is in English\n- The key repeats to match the message length\n- All letters are uppercase\n- The message starts with a common English word\n\nCan you break the Vigenère cipher?\n\nFlag format: The decrypted message contains the flag",
+      "challenge_type": "basic_crypto",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\vigenere_challenge.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.130935",
+        "detected_type": "basic_crypto",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "CHALLENGE DESCRIPTION\nYou are after an organised crime group which is responsible for the illegal weapon market in your country. As a secret agent, you have infiltrated the group enough to be included in meetings with clients. During the last negotiation, you found one of the confidential messages for the customer. It contains crucial information about the delivery. Do you think you can decrypt it?",
+      "challenge_type": "network",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\BabyEncryption\\descriptiion.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.138551",
+        "detected_type": "network",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "",
+      "challenge_type": "unknown",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\The Last Dance\\crypto_the_last_dance\\description.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.147027",
+        "detected_type": "unknown",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "c4a66edfe80227b4fa24d431\n7aa34395a258f5893e3db1822139b8c1f04cfab9d757b9b9cca57e1df33d093f07c7f06e06bb6293676f9060a838ea138b6bc9f20b08afeb73120506e2ce7b9b9dcd9e4a421584cfaba2481132dfbdf4216e98e3facec9ba199ca3a97641e9ca9782868d0222a1d7c0d3119b867edaf2e72e2a6f7d344df39a14edc39cb6f960944ddac2aaef324827c36cba67dcb76b22119b43881a3f1262752990\n7d8273ceb459e4d4386df4e32e1aecc1aa7aaafda50cb982f6c62623cf6b29693d86b15457aa76ac7e2eef6cf814ae3a8d39c7",
+      "challenge_type": "elliptic_curve",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\The Last Dance\\crypto_the_last_dance\\out.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.154797",
+        "detected_type": "elliptic_curve",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    },
+    {
+      "content": "CHALLENGE DESCRIPTION\nQubit Enterprises is a new company touting it's propriety method of qubit stabilization. They expect to be able to build a quantum computer that can factor a RSA-1024 number in the next 10 years. As a promotion they are giving out \"time capsules\" which contain a message for the future encrypted by 1024 bit RSA. They might be great engineers, but they certainly aren't cryptographers, can you find a way to read the message without having to wait for their futuristic machine? este es el host HOST\n\n94.237.49.23:48829",
+      "challenge_type": "rsa",
+      "metadata": {
+        "source_file": "challenges\\uploaded\\Baby Time Capsule\\baby_time_capsule\\description.txt",
+        "analyzed_timestamp": "2025-08-25T00:03:35.162710",
+        "detected_type": "rsa",
+        "confidence": 0.5,
+        "analyzer_version": "1.0"
+      }
+    }
+  ],
+  "type_distribution": {
+    "rsa": 4,
+    "unknown": 4,
+    "basic_crypto": 1,
+    "network": 1,
+    "elliptic_curve": 1
+  }
+}

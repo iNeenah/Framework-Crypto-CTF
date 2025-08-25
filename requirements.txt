@@ -1,0 +1,35 @@
+# Crypto CTF Solver - Dependencias principales
+
+# Criptografía
+pycryptodome>=3.18.0
+gmpy2>=2.1.5
+cryptography>=41.0.0
+
+# Matemáticas avanzadas
+sympy>=1.12
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Machine Learning
+tensorflow>=2.13.0
+torch>=2.0.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+
+# Redes y CTF
+pwntools>=4.10.0
+asyncio-mqtt>=0.13.0
+aiohttp>=3.8.0
+
+# Compresión de archivos
+py7zr>=0.20.0
+rarfile>=4.0
+patool>=1.12
+
+# Utilidades
+click>=8.1.0
+colorama>=0.4.6
+tqdm>=4.65.0
+rich>=13.4.0
+pydantic>=2.0.0
+python-magic>=0.4.27

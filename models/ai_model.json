@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "created": "2025-08-25T00:05:38.717704",
+  "total_samples": 11,
+  "classification_rules": {
+    "rsa": {
+      "keywords": [
+        "numbers",
+        "manera",
+        "flag",
+        "aleatorios",
+        "time",
+        "message",
+        "think",
+        "propriety",
+        "might",
+        "vulnerable"
+      ],
+      "patterns": [
+        "small_exponent",
+        "flag_format",
+        "encryption_challenge",
+        "factorization",
+        "rsa_parameters"
+      ]
+    },
+    "unknown": {
+      "keywords": [
+        "personalizado",
+        "describes",
+        "crypto",
+        "quieres",
+        "informaci\u00f3n",
+        "descripci\u00f3n",
+        "datos",
+        "mensaje",
+        "t\u00e9cnica",
+        "est\u00e1"
+      ],
+      "patterns": [
+        "flag_format"
+      ]
+    },
+    "basic_crypto": {
+      "keywords": [
+        "length",
+        "flag",
+        "word",
+        "message",
+        "vigen\u00e8re",
+        "cryptohack",
+        "uppercase",
+        "letters",
+        "additional",
+        "secret"
+      ],
+      "patterns": [
+        "vigenere_cipher",
+        "encryption_challenge",
+        "flag_format"
+      ]
+    },
+    "network": {
+      "keywords": [
+        "group",
+        "last",
+        "description",
+        "messages",
+        "think",
+        "enough",
+        "secret",
+        "challenge",
+        "market",
+        "weapon"
+      ],
+      "patterns": []
+    },
+    "elliptic_curve": {
+      "keywords": [],
+      "patterns": []
+    }
+  },
+  "confidence_threshold": 0.6
+}

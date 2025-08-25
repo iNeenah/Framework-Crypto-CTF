@@ -1,0 +1,4 @@
+Ciphertext: LXFOPVEFRNHR
+Key hint: The key is a 4-letter word related to "LOVE"
+This is a Vigenère cipher challenge.
+FLAG: vigenere_medium_solved

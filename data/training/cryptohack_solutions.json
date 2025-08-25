@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "source": "cryptohack_challenges",
+  "samples": [
+    {
+      "content": "Extended Euclidean algorithm p=26513 q=32321 find integers u,v",
+      "type": "MATH",
+      "method": "extended_euclidean",
+      "success": true,
+      "flag": "-8404"
+    },
+    {
+      "content": "11 \u2261 x mod 6, 8146798528947 \u2261 y mod 17, find smaller",
+      "type": "MATH",
+      "method": "modular_arithmetic",
+      "success": true,
+      "flag": "4"
+    },
+    {
+      "content": "Fermat little theorem 273246787654^65536 mod 65537",
+      "type": "MATH",
+      "method": "fermat_little_theorem",
+      "success": true,
+      "flag": "1"
+    },
+    {
+      "content": "Find modular inverse d such that 3*d \u2261 1 mod 13",
+      "type": "MATH",
+      "method": "modular_inverse",
+      "success": true,
+      "flag": "9"
+    },
+    {
+      "content": "Elliptic curve Y^2=X^3+497X+1768 mod 9739 point addition P+P+Q+R",
+      "type": "ECC",
+      "method": "elliptic_curve_addition",
+      "success": true,
+      "flag": "crypto{4215,2162}"
+    }
+  ],
+  "total_samples": 5,
+  "solved_challenges": 6
+}

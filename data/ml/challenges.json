@@ -1,0 +1,482 @@
+[
+  {
+    "id": "25f671b5cdde",
+    "name": "advanced_rsa_challenge",
+    "description": "Desafío extraído de advanced_rsa_challenge.txt",
+    "challenge_type": "rsa",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 493,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.379625",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\advanced_rsa_challenge.txt",
+        "size": 493,
+        "mime_type": "text/plain",
+        "hash_md5": "1fec3a630f8ea9f32736e789576c0286",
+        "hash_sha256": "d1074eb28d84f4a513ec46999216d17bfc502c0ec98dee247936d65729e3a5a2"
+      }
+    ]
+  },
+  {
+    "id": "fed4d5fb0031",
+    "name": "baby_encryption_challenge",
+    "description": "Desafío extraído de baby_encryption_challenge.txt",
+    "challenge_type": "network",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 1135,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.401368",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\baby_encryption_challenge.txt",
+        "size": 1135,
+        "mime_type": "text/plain",
+        "hash_md5": "00beb337a58fbe3eb0e1614976400a2b",
+        "hash_sha256": "69ace0801edda7361e148d8811312b93b71a44a08b996820c9f6de2884c81907"
+      }
+    ]
+  },
+  {
+    "id": "d1b6c07c6552",
+    "name": "baby_time_capsule_challenge",
+    "description": "Desafío extraído de baby_time_capsule_challenge.txt",
+    "challenge_type": "rsa",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 1370,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.422093",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\baby_time_capsule_challenge.txt",
+        "size": 1370,
+        "mime_type": "text/plain",
+        "hash_md5": "9c6c552a45c46398d37db2f08195068c",
+        "hash_sha256": "ae411ea6e5846cb9d2a7a75f428ce7b98b56260e916d83ce8ff7fc73c574a4d8"
+      }
+    ]
+  },
+  {
+    "id": "de81f1e3cca6",
+    "name": "cryptohack",
+    "description": "Desafío extraído de cryptohack.txt",
+    "challenge_type": "elliptic_curve",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 1655,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.441866",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\cryptohack.txt",
+        "size": 1655,
+        "mime_type": "text/plain",
+        "hash_md5": "2f04c6d672ccc9e3cd80af52560443b4",
+        "hash_sha256": "e56f51d9dd8442c81f105502ae2bdc14ad6f1bd9d9a5389691012244f29fdc63"
+      }
+    ]
+  },
+  {
+    "id": "f379026c33a7",
+    "name": "ejemplo_desafio",
+    "description": "Desafío extraído de ejemplo_desafio.txt",
+    "challenge_type": "unknown",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 196,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.463659",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\ejemplo_desafio.txt",
+        "size": 196,
+        "mime_type": "text/plain",
+        "hash_md5": "3219a056c2d8c21e617ff77539e7adca",
+        "hash_sha256": "526a68b3fa7e5a37f244e7246d303b27ca315e89daab2ffdf7df1739fe5923e3"
+      }
+    ]
+  },
+  {
+    "id": "a4f24b0ac058",
+    "name": "mi_desafio_ctf",
+    "description": "Desafío extraído de mi_desafio_ctf.txt",
+    "challenge_type": "unknown",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 311,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.485321",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\mi_desafio_ctf.txt",
+        "size": 311,
+        "mime_type": "text/plain",
+        "hash_md5": "fce75eb4651648b6968d23724dc1392a",
+        "hash_sha256": "801e4a8867f54fc7aa3fb78616de607a6ee89d1a9effd6173d70b28062de468f"
+      }
+    ]
+  },
+  {
+    "id": "b6b14996a81b",
+    "name": "new_cryptohack_challenge",
+    "description": "Desafío extraído de new_cryptohack_challenge.txt",
+    "challenge_type": "basic_crypto",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 429,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.560500",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\new_cryptohack_challenge.txt",
+        "size": 429,
+        "mime_type": "text/plain",
+        "hash_md5": "066a0be832f51e19a41c8454a65c0468",
+        "hash_sha256": "91d277bd44f7dc366f053192f400e3d2bcab50263983e546a40c7321201b201e"
+      }
+    ]
+  },
+  {
+    "id": "d1ae30681588",
+    "name": "plantilla_desafio",
+    "description": "Desafío extraído de plantilla_desafio.txt",
+    "challenge_type": "unknown",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 230,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.582439",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\plantilla_desafio.txt",
+        "size": 230,
+        "mime_type": "text/plain",
+        "hash_md5": "223ad42e76742cae7185890fc0acb38d",
+        "hash_sha256": "bc8fb2eae8e93daeeb7041b42e4251b6d24d04a9b5b34c4e51142bd56362ba34"
+      }
+    ]
+  },
+  {
+    "id": "e8530c97cf10",
+    "name": "rsa_ctf_real",
+    "description": "Desafío extraído de rsa_ctf_real.txt",
+    "challenge_type": "rsa",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 2219,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.604101",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\rsa_ctf_real.txt",
+        "size": 2219,
+        "mime_type": "text/plain",
+        "hash_md5": "196a074eb9d34a001999e6918a0f4437",
+        "hash_sha256": "830e47ebead8aab6298e537dca91c44242cc49d8608618127c4c9551d3746218"
+      }
+    ]
+  },
+  {
+    "id": "9fce8481d299",
+    "name": "the_last_dance_challenge",
+    "description": "Desafío extraído de the_last_dance_challenge.txt",
+    "challenge_type": "network",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 1270,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.630917",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\the_last_dance_challenge.txt",
+        "size": 1270,
+        "mime_type": "text/plain",
+        "hash_md5": "7586bc19d219721a0a60cfc3ef1e473e",
+        "hash_sha256": "9d7a432f3a9abb82200281e8c451d9ff6f3e30838dc8f30794d5a8ec956ace26"
+      }
+    ]
+  },
+  {
+    "id": "b6a0645325a1",
+    "name": "vigenere_challenge",
+    "description": "Desafío extraído de vigenere_challenge.txt",
+    "challenge_type": "basic_crypto",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 469,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.661250",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\vigenere_challenge.txt",
+        "size": 469,
+        "mime_type": "text/plain",
+        "hash_md5": "8d891a43eff713cffb944788047808bb",
+        "hash_sha256": "a8ffcb00b62d43ec67f9c1710c159c0d29a7dc86a03471f787e2337d1062b316"
+      }
+    ]
+  },
+  {
+    "id": "9434225f07b9",
+    "name": "descriptiion",
+    "description": "Desafío extraído de descriptiion.txt",
+    "challenge_type": "network",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 402,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.696542",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\BabyEncryption\\descriptiion.txt",
+        "size": 402,
+        "mime_type": "text/plain",
+        "hash_md5": "6451cac0fb1433671b349314ab7fe5b2",
+        "hash_sha256": "b919bc402bafd8cbc70657d2d65cecab8c275b9c8643ea4bde3604aa537538aa"
+      }
+    ]
+  },
+  {
+    "id": "7fcb82f6e80e",
+    "name": "description",
+    "description": "Desafío extraído de description.txt",
+    "challenge_type": "unknown",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 0,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.719186",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\The Last Dance\\crypto_the_last_dance\\description.txt",
+        "size": 0,
+        "mime_type": "text/plain",
+        "hash_md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "hash_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  {
+    "id": "54ae09101a05",
+    "name": "out",
+    "description": "Desafío extraído de out.txt",
+    "challenge_type": "elliptic_curve",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 440,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.753625",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\The Last Dance\\crypto_the_last_dance\\out.txt",
+        "size": 440,
+        "mime_type": "text/plain",
+        "hash_md5": "6c9f27080d27c363fcdd8080749b79ee",
+        "hash_sha256": "a7595f182d56648016f27772ad9e76a87ffffa52c3c3324e3fcf2bbd583cedda"
+      }
+    ]
+  },
+  {
+    "id": "3f0e2ce8ca62",
+    "name": "description",
+    "description": "Desafío extraído de description.txt",
+    "challenge_type": "rsa",
+    "tags": [
+      "text"
+    ],
+    "metadata": {
+      "total_files": 1,
+      "total_size": 543,
+      "file_types": {
+        "text": 1
+      },
+      "extensions": [
+        ".txt"
+      ],
+      "has_executables": false,
+      "has_images": false,
+      "has_documents": false
+    },
+    "timestamp": "2025-08-25T00:02:23.784700",
+    "files": [
+      {
+        "path": "C:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\uploaded\\Baby Time Capsule\\baby_time_capsule\\description.txt",
+        "size": 543,
+        "mime_type": "text/plain",
+        "hash_md5": "de18737d678dc80d37f322eb3379fe6f",
+        "hash_sha256": "ded119e6d350fa330eb128c3a598f1abf7c6a05fbac866cb29d47756f7817504"
+      }
+    ]
+  }
+]

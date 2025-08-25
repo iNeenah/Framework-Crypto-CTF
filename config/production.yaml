@@ -1,0 +1,108 @@
+api:
+  cors_enabled: true
+  cors_origins:
+  - '*'
+  debug: false
+  documentation_enabled: true
+  enabled: false
+  host: 0.0.0.0
+  max_request_size: 52428800
+  port: 8000
+  rate_limiting: true
+cache:
+  enabled: true
+  file_cache_dir: cache
+  max_size: 1000
+  redis_db: 0
+  redis_host: localhost
+  redis_port: 6379
+  ttl: 3600
+  type: memory
+created_at: '2025-08-24T18:58:06.792734'
+database:
+  connection_pool_size: 10
+  database: crypto_solver
+  enabled: false
+  host: localhost
+  password: ''
+  port: 5432
+  timeout: 30
+  type: sqlite
+  username: ''
+debug: false
+environment: production
+logging:
+  backup_count: 5
+  console_enabled: true
+  file_enabled: true
+  json_enabled: true
+  level: INFO
+  log_dir: logs
+  max_file_size: 10485760
+  structured_logging: true
+ml:
+  auto_train: false
+  enabled: true
+  feature_cache_enabled: true
+  min_training_samples: 50
+  model_path: models/ultimate_classifier.joblib
+  prediction_cache_ttl: 1800
+  retrain_threshold: 0.7
+  training_data_path: data/training
+network:
+  allowed_hosts: []
+  blocked_hosts: []
+  default_timeout: 30
+  enabled: true
+  max_connections: 10
+  proxy_enabled: false
+  proxy_host: ''
+  proxy_port: 8080
+  retry_attempts: 3
+  retry_delay: 1
+performance:
+  max_cpu_usage: 80.0
+  max_memory_usage: 2147483648
+  max_workers: 4
+  monitoring_enabled: true
+  monitoring_interval: 60
+  parallel_processing: true
+  timeout_default: 30
+  timeout_ml: 60
+  timeout_plugin: 120
+plugins:
+  allow_external_plugins: false
+  auto_load: true
+  disabled_plugins: []
+  max_plugin_memory: 536870912
+  plugin_dirs:
+  - src/plugins
+  plugin_timeout: 60
+security:
+  allowed_file_types:
+  - .txt
+  - .py
+  - .c
+  - .cpp
+  - .java
+  - .js
+  - .json
+  - .xml
+  - .pem
+  - .key
+  api_key_required: false
+  api_keys: []
+  blocked_patterns:
+  - rm -rf
+  - 'format c:'
+  - del /f
+  - __import__
+  - eval(
+  - exec(
+  max_execution_time: 300
+  max_file_size: 104857600
+  rate_limit_requests: 100
+  rate_limit_window: 3600
+  sandbox_enabled: true
+updated_at: '2025-08-24T18:58:06.793724'
+version: 1.0.0

@@ -1,0 +1,54 @@
+# Git y archivos de control de versión
+.git
+.gitignore
+.github
+
+# Archivos de Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Datos locales (que no deben ir en imagen)
+data/sekai_writeups/*.md
+data/sekai_writeups/*.py
+logs/*.log
+models/expert/*.pkl
+
+# Documentación
+docs/
+README.md
+LICENSE
+
+# Archivos de configuración local
+.env
+.env.local

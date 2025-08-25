@@ -1,0 +1,7 @@
+Advanced Cryptography Challenge:
+This uses a custom encryption algorithm that combines multiple techniques.
+Encrypted message: 
+4a6f686e20446f65206973206120676f6f64206d616e2e20486520776f726b7320617420746865206f6666696365206576657279206461792e
+This challenge requires advanced cryptanalysis techniques.
+The algorithm uses a combination of substitution and transposition.
+FLAG: advanced_crypto_master

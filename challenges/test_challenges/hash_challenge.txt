@@ -1,0 +1,5 @@
+Hash Challenge:
+Find the original message that produces this MD5 hash:
+5d41402abc4b2a76b9719d911017c592
+Hint: It's a common English word
+FLAG: hash_cracking_success

@@ -1,0 +1,78 @@
+# Expert CTF Writeup - Caesar Cipher with Frequency Analysis
+
+## Challenge Description
+I received this encrypted message:
+```
+WKLV LV D VLPSOH FDHVDU FLSKHU ZLWK VKLIW 3
+```
+
+The challenge states it's a Caesar cipher but doesn't give the shift value.
+
+## Analysis
+This is a classic substitution cipher where each letter is shifted by a fixed amount. The key insight is that Caesar ciphers are vulnerable to frequency analysis and brute force due to the limited key space (only 25 possible shifts).
+
+## Solution Approach
+
+### Method 1: Frequency Analysis
+In English text, 'E' is the most common letter. Looking at the ciphertext:
+- Most common letters in ciphertext: L, V, K
+- If 'L' represents 'E', then shift = L - E = 7
+- Let me try this shift...
+
+### Method 2: Brute Force (More Reliable)
+Since there are only 25 possible shifts, I can try them all:
+
+```python
+def caesar_decrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            shifted = ord(char) - shift
+            if char.isupper():
+                if shifted < ord('A'):
+                    shifted += 26
+                result += chr(shifted)
+            else:
+                if shifted < ord('a'):
+                    shifted += 26
+                result += chr(shifted)
+        else:
+            result += char
+    return result
+
+ciphertext = "WKLV LV D VLPSOH FDHVDU FLSKHU ZLWK VKLIW 3"
+
+for shift in range(1, 26):
+    decrypted = caesar_decrypt(ciphertext, shift)
+    print(f"Shift {shift}: {decrypted}")
+    if "THE" in decrypted or "THIS" in decrypted:
+        print(f"*** Likely solution with shift {shift} ***")
+```
+
+### Solution
+With shift = 3, I get:
+```
+THIS IS A SIMPLE CAESAR CIPHER WITH SHIFT 3
+```
+
+Perfect! The message is readable and makes sense.
+
+## Tools Used
+- Python for brute force approach
+- Manual frequency analysis
+- Pattern recognition (common English words)
+
+## Key Techniques
+- Frequency analysis
+- Brute force attack
+- Pattern recognition
+- Caesar cipher decryption algorithm
+
+## Flag
+The decrypted message reveals the method: `CTF{caesar_shift_3_frequency_analysis}`
+
+## Lessons Learned
+1. Caesar ciphers have very small key space (25 possibilities)
+2. Brute force is often faster than frequency analysis for Caesar
+3. Look for common English words like "THE", "AND", "IS" to validate solutions
+4. Frequency analysis works better with longer texts

@@ -1,0 +1,38 @@
+{
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file_path": "logs/crypto-ctf-solver.log",
+    "max_file_size": 10485760,
+    "backup_count": 5
+  },
+  "plugins": {
+    "enabled_plugins": [
+      "basic_crypto",
+      "rsa",
+      "elliptic_curve",
+      "network"
+    ],
+    "plugin_timeout": 300,
+    "max_concurrent_plugins": 4
+  },
+  "ml": {
+    "model_path": "data/models",
+    "training_data_path": "data/training_data",
+    "auto_train": true,
+    "min_training_samples": 100,
+    "model_update_frequency": 50
+  },
+  "network": {
+    "default_timeout": 30,
+    "max_connections": 10,
+    "retry_attempts": 3,
+    "user_agent": "CryptoCTFSolver/0.1.0"
+  },
+  "security": {
+    "sandbox_enabled": true,
+    "max_memory_mb": 1024,
+    "max_cpu_time": 300,
+    "temp_dir_cleanup": true
+  }
+}

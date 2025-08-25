@@ -1,0 +1,91 @@
+# Expert CTF Writeup - Base64 Encoding Challenge
+
+## Challenge Description
+Found this encoded string in a CTF challenge:
+```
+SGVsbG8gV29ybGQhIFRoaXMgaXMgYSBiYXNlNjQgZW5jb2RlZCBtZXNzYWdl
+```
+
+No additional context provided, but the format suggests encoding rather than encryption.
+
+## Analysis
+Looking at this string, I immediately recognize several Base64 characteristics:
+1. Only contains letters (a-z, A-Z), numbers (0-9), and '=' for padding
+2. Length is divisible by 4 (typical for Base64)
+3. No special characters except potential '=' at the end
+4. Mixed case letters
+
+Base64 is a common encoding scheme in CTFs for hiding messages or as part of multi-step challenges.
+
+## Solution Steps
+
+### Step 1: Identify the encoding
+The character set and format strongly suggest Base64:
+- Uses A-Z, a-z, 0-9, and '=' for padding
+- String length is 64 characters (divisible by 4)
+
+### Step 2: Decode with Python
+```python
+import base64
+
+encoded = "SGVsbG8gV29ybGQhIFRoaXMgaXMgYSBiYXNlNjQgZW5jb2RlZCBtZXNzYWdl"
+decoded_bytes = base64.b64decode(encoded)
+decoded_string = decoded_bytes.decode('utf-8')
+print(decoded_string)
+```
+
+### Step 3: Alternative tools
+Could also use command line tools:
+```bash
+echo "SGVsbG8gV29ybGQhIFRoaXMgaXMgYSBiYXNlNjQgZW5jb2RlZCBtZXNzYWdl" | base64 -d
+```
+
+Or online decoders like CyberChef.
+
+## Result
+The decoded message is:
+```
+Hello World! This is a base64 encoded message
+```
+
+## Advanced Considerations
+In real CTF challenges, Base64 might be:
+1. **Nested**: Multiple layers of encoding
+2. **Modified**: Custom alphabet or URL-safe variant
+3. **Combined**: Part of a longer encoding chain
+4. **Steganography**: Hiding data in the padding
+
+### Checking for nested encoding:
+```python
+# Check if decoded result is still encoded
+import re
+
+def looks_like_base64(s):
+    return bool(re.match('^[A-Za-z0-9+/]*={0,2}$', s)) and len(s) % 4 == 0
+
+decoded = base64.b64decode(encoded).decode('utf-8')
+if looks_like_base64(decoded):
+    print("Might need another round of decoding")
+```
+
+## Tools Used
+- Python base64 library
+- Command line base64 utility
+- CyberChef (web-based decoder)
+- Manual pattern recognition
+
+## Key Techniques
+- Encoding recognition (vs encryption)
+- Base64 alphabet identification  
+- Multi-layer decoding consideration
+- Pattern matching for encoded data
+
+## Flag
+Based on the decoded content: `CTF{base64_encoding_detected}`
+
+## Lessons Learned
+1. Base64 is encoding, not encryption - reversible without keys
+2. Always check for nested/layered encoding in CTFs
+3. Recognize Base64 by its character set and 4-byte alignment
+4. Consider modified Base64 variants (URL-safe, custom alphabets)
+5. Base64 is often just the first step in complex challenges

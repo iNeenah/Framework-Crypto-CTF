@@ -1,0 +1,7 @@
+RSA Challenge:
+n = 3233
+e = 17
+c = 2790
+This is a simple RSA challenge with small numbers for testing.
+The message was encrypted using standard RSA encryption.
+FLAG: rsa_small_numbers

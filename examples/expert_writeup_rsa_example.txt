@@ -1,0 +1,82 @@
+# Expert CTF Writeup - RSA Small Exponent Attack
+
+## Challenge Description
+We received an RSA encrypted message with the following parameters:
+- n = 25777 (composite number)
+- e = 3 (small exponent)
+- c = 11213 (ciphertext)
+
+## Analysis
+Looking at this RSA challenge, I immediately notice the small exponent e=3. This is a classic indicator for potential vulnerabilities.
+
+First, let me check if the modulus n is factorizable:
+- n = 25777
+- Using trial division or online tools like factordb
+- 25777 = 149 × 173
+
+## Solution Steps
+
+### Step 1: Factor the modulus
+Since n is relatively small, I can factor it easily:
+```python
+import gmpy2
+
+n = 25777
+# Factor n
+p = 149
+q = 173
+assert p * q == n
+```
+
+### Step 2: Calculate phi(n)
+```python
+phi_n = (p - 1) * (q - 1)
+phi_n = 148 * 172 = 25456
+```
+
+### Step 3: Calculate private exponent d
+```python
+d = gmpy2.invert(e, phi_n)
+d = gmpy2.invert(3, 25456)
+d = 16971
+```
+
+### Step 4: Decrypt the message
+```python
+m = pow(c, d, n)
+m = pow(11213, 16971, 25777)
+m = 18434
+
+# Convert to ASCII if needed
+message = bytes.fromhex(hex(m)[2:])
+print(message)
+```
+
+## Alternative Approach: Cube Root Attack
+Since e=3, I could also try a cube root attack for small plaintexts:
+```python
+import gmpy2
+cube_root = gmpy2.iroot(c, 3)
+if cube_root[1]:  # if exact cube root
+    print("Small plaintext found:", cube_root[0])
+```
+
+## Tools Used
+- Python with gmpy2 library
+- factordb (for larger factorizations)
+- sage (alternative for mathematical operations)
+
+## Key Techniques
+- Small exponent RSA
+- Integer factorization
+- Modular arithmetic
+- Extended Euclidean algorithm (for d calculation)
+
+## Flag
+The decrypted message reveals: `CTF{small_exponent_rsa_broken}`
+
+## Lessons Learned
+1. Always check for small exponents in RSA challenges
+2. Small moduli can often be factored quickly
+3. The cube root attack is viable when e=3 and m^3 < n
+4. factordb is invaluable for quick factorizations

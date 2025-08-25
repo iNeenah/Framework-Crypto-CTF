@@ -1,0 +1,11 @@
+{
+  "trained_at": "2025-08-25T00:38:47.427367",
+  "writeups_used": 34,
+  "accuracy": 0.7272727272727273,
+  "challenge_types": [
+    "crypto",
+    "hash",
+    "rsa",
+    "symmetric"
+  ]
+}

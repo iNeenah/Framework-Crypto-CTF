@@ -1,0 +1,5 @@
+Hex encoded XOR cipher:
+1c0e1b0a1f1b0e1a1f1b0e1a1f1b0e1a
+Key: Single byte XOR
+Hint: The key is a printable ASCII character
+FLAG: xor_single_byte_key

@@ -1,0 +1,32 @@
+# Cryptographic Challenge - Graph Recovery Attack
+
+You are given an encrypted graph representation and need to recover the original query structure.
+
+## Challenge Description
+
+This challenge implements a variation of the Query Recovery attack against graph encryption schemes, similar to the method described in cryptographic research papers.
+
+## Given Information
+
+```
+Encrypted edges: [(h1, h2), (h2, h3), (h1, h4), (h4, h5)]
+Hash tokens: 
+- a3b2c1d4e5f6789abcdef...
+- b4c5d6e7f8901234567890...
+- c6d7e8f90123456789abcd...
+
+Node mappings are encrypted using SHA256.
+```
+
+## Hints
+
+1. This is related to shortest path queries in encrypted graphs
+2. You need to implement path name computation
+3. The attack works by analyzing structural patterns
+4. NetworkX library might be useful for graph operations
+
+## Goal
+
+Recover the original graph structure and find the flag embedded in the node relationships.
+
+FLAG: crypto{graph_recovery_attack_successful}
