@@ -1,13 +1,109 @@
 [
-  "advanced_rsa_challenge.txt",
-  "The Last Dance\\crypto_the_last_dance\\out.txt",
-  "The Last Dance\\crypto_the_last_dance\\description.txt",
-  "baby_time_capsule_challenge.txt",
-  "plantilla_desafio.txt",
-  "vigenere_challenge.txt",
-  "BabyEncryption\\descriptiion.txt",
-  "ejemplo_desafio.txt",
-  "mi_desafio_ctf.txt",
-  "Baby Time Capsule\\baby_time_capsule\\description.txt",
-  "rsa_ctf_real.txt"
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Point_Negation",
+        "description": "[image] - Chall cho ta: $E: Y^2 = X^3 + 497 X + 1768, p: 9739.$ - Y\u00eau c\u1ea7u t\u00ednh t\u1ecda \u0111\u1ed9 $Q(x, y)$ v\u1edbi $P + Q = 0$ v\u00e0 $P(8045, 6936).$ - $Q = -P.$ ```sage sage: E = EllipticCurve(GF(9739),[497,1768]) sage: P = E(8045,6936) sage: -P (8045 : 2803 : 1) ``` - Flag: `crypto{8045,2803}`",
+        "labels": [
+            "sage",
+            "gf",
+            "ellipticcurve"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Point_Addition",
+        "description": "[image] - Chall cho ta c\u00e1ch t\u00ednh $P+Q$. &gt;Algorithm for the addition of two points: P + Q (a) If P = O, then P + Q = Q. (b) Otherwise, if Q = O, then P + Q = P. (c) Otherwise, write P = (x1, y1) and Q = (x2, y2). (d) If x1 = x2 and y1 = \u2212y2, then P + Q = O. (e) Otherwise: (e1) if P \u2260 Q: \u03bb = (y2 - y1) / (x2 - x1) (e2) if P = Q: \u03bb = (3x12 + a) / 2y1 (f) x3 = \u03bb2 \u2212 x1 \u2212 x2, y3 = \u03bb(x1 \u2212x3) \u2212 y1 (g) P + Q = (x3, y3). - Y\u00eau c\u1ea7u ta t\u00ednh $S= P+P+Q+R$,",
+        "labels": [
+            "sage",
+            "gf",
+            "ellipticcurve"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Scalar_Multiplication",
+        "description": "[image] - Chall y\u00eau c\u1ea7u ta t\u00ednh $Q(x,y)= 7863 P$, v\u1edbi $E: Y2 = X3 + 497 X + 1768, p: 9739$; $P= (2339, 2213)$. - V\u1edbi th\u00f4ng tin \u0111\u01b0\u1ee3c cung c\u1ea5p t\u1eeb chall l\u00e0: &gt;Double and Add algorithm for the scalar multiplication of point P by n. &gt;Input: P in E(Fp) and an integer n &gt; 0 &gt;1. Set Q = P and R = O. &gt;2. Loop while n &gt; 0. &gt;3. If n \u2261 1 mod 2, set R = R + Q. &gt;4. Set Q = 2 Q and n = \u230an/2\u230b. &gt;5. If n &gt; 0, continue with loop at Step",
+        "labels": [
+            "scalar multiplication",
+            "double and add",
+            "sage",
+            "gf",
+            "ellipticcurve"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Curves_and_Logs",
+        "description": "[image] - Chall y\u00eau c\u1ea7u ta t\u00ednh x c\u1ee7a $S(x, y)$ sau khi b\u0103m SHA1 v\u1edbi: $Q_A = n_AG$; $Q_B = n_BG$; shared secret : $S = n_A*Q_B = n_B * Q_A$. ```Python sage: E = EllipticCurve(GF(9739),[497,1768]) sage: QA = E(815,3190) sage: nB = 1829 sage: S = QA*nB sage: S (7929 : 707 : 1) ``` - SHA1 x= 7929 ta thu \u0111\u01b0\u1ee3c flag. - Flag: `crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}`",
+        "labels": [
+            "sha1",
+            "sage",
+            "gf",
+            "ellipticcurve"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Efficient_Exchange",
+        "description": "[image] - Chall cho ta $q_x = 4726$ v\u00e0 $n_B = 6534$ v\u00e0 file [link] \u0111\u1ec3 decrypt ra flag. - Thay x v\u00e0o $Y^2 = X^3 + 497 X + 1768$ \u0111\u1ec3 t\u00ecm $Y^2$ - V\u1edbi $Y^2$ ta t\u00ednh $Y$ d\u1ef1a v\u00e0o $p \\equiv 3\\ mod(4)$ v\u00e0 Symbol Legend. [image] - Flag: `crypto{3ff1c1ent_k3y_3xch4ng3}`. # PARAMETER CHOICE",
+        "labels": [
+            "parameter choice"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Smooth_Criminal",
+        "description": "- S\u1eed d\u1ee5ng h\u00e0m `discrete_log` \u0111\u1ec3 l\u1ea5y gi\u00e1 tr\u1ecb n khi bi\u1ebft \u0111\u01b0\u1ee3c $G$ v\u00e0 $Q_A$ do p nh\u1ecf. ```Python from Crypto.Cipher import AES from Crypto.Util.Padding import pad, unpad import hashlib def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_flag(shared_secret: int, iv: str, ciphertext: str): sha1 = hashlib.sha1() sha1.update(str(shared_secret).encode(&#39;ascii&#39;)) key = sha1.digest()[:16",
+        "labels": [
+            "sha1",
+            "sage",
+            "gf",
+            "ellipticcurve"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Exceptional_Curves",
+        "description": "- V\u1edbi E.order \u0111\u00e3 l\u00e0 s\u1ed1 nguy\u00ean t\u1ed1 v\u00e0 chall thu\u1ed9c d\u1ea1ng t\u1ea5n c\u00f4ng [link] ```Python from Crypto.Cipher import AES from Crypto.Util.number import inverse from Crypto.Util.Padding import pad, unpad from collections import namedtuple from random import randint import hashlib import os def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_fla",
+        "labels": [
+            "sha1",
+            "smart attack",
+            "sage",
+            "gf",
+            "ellipticcurve",
+            "lift_x",
+            "order"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Micro_Transmissions",
+        "description": "- Same as chall `Smooth Criminal` ```Python from Crypto.Cipher import AES from Crypto.Util.number import inverse from Crypto.Util.Padding import pad, unpad from collections import namedtuple from random import randint import hashlib import os def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_flag(shared_secret: int, iv: str, ciphertext: str): # Derive AES key from shared secret sha1",
+        "labels": [
+            "sha1",
+            "smooth criminal",
+            "sage",
+            "gf",
+            "ellipticcurve",
+            "lift_x",
+            "order"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Elliptic_Nodes",
+        "description": "```Python from Crypto.Util.number import long_to_bytes from collections import namedtuple from sage.all import * Point = namedtuple(&#34;Point&#34;, &#34;x y&#34;) p = 4368590184733545720227961182704359358435747188309319510520316493183539079703 Gx = 8742397231329873984594235438374590234800923467289367269837473862487362482 Gy = 225987949353410341392975247044711665782695329311463646299187580326445253608 Qx = 2582928974243465355371953056699793745022552378548418288211138499777818633265 Qy = 2421683",
+        "labels": [
+            "sage",
+            "gf"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    },
+    {
+        "id": "cryptohack_elliptic_curves_20250827_215838_Curveball",
+        "description": "[image] &times;",
+        "labels": [
+            "order"
+        ],
+        "source": "c:\\Users\\Nenaah\\Desktop\\Programacion\\GIT\\CRYPTO\\challenges\\training_data\\cryptohack_elliptic_curves_20250827_215838.json"
+    }
 ]

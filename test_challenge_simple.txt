@@ -1,0 +1,7 @@
+Simple Base64 Challenge:
+
+The flag has been encoded with Base64.
+
+Encoded flag: Y3J5cHRve2Jhc2U2NF9pc19lYXN5fQ==
+
+Decode it to get the flag.

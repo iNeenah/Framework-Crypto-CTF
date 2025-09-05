@@ -181,3 +181,6 @@ Thumbs.db
 # OS files
 .DS_Store
 Thumbs.db
+
+# YoYo AI version control directory
+.yoyo/
