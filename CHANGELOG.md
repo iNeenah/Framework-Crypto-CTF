@@ -2,6 +2,62 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2025-08-27 - AI AUTONOMOUS AGENT RELEASE
+
+### 🤖 Major Features Added
+- **Autonomous AI Agent**: Complete AI-powered challenge solver combining Expert ML knowledge with LLM capabilities
+- **Multi-LLM Support**: Integration with Google Gemini, OpenAI GPT-4, and Anthropic Claude
+- **Enhanced Network Handler**: Robust network connectivity with automatic retries and intelligent interaction
+- **Batch Processing**: Solve multiple challenges automatically from directories
+- **Interactive Mode**: Real-time challenge solving with AI assistance
+
+### 🧠 Expert Knowledge System Enhanced
+- **255 Professional Writeups**: Integrated CryptoHack and GiacomoPope repositories 
+- **566 Training Flags**: Massive flag dataset for pattern recognition
+- **28 Cryptographic Techniques**: Advanced techniques including isogeny cryptography
+- **19 International CTFs**: Coverage from major CTF events worldwide
+- **Multi-source Learning**: HackMD, GitHub repositories, and expert writeups
+
+### 🛠️ Technical Improvements
+- **AI Configuration System**: Automated setup for multiple AI providers
+- **Smart Challenge Analysis**: Automatic pattern detection and technique suggestion
+- **Execution Engine**: Safe code execution with timeout and error handling
+- **Solution Templates**: Intelligent code generation for different crypto types
+- **Statistics Tracking**: Comprehensive success rate and performance metrics
+
+### 📁 New Files Added
+- `autonomous_ctf_agent.py` - Main autonomous agent implementation
+- `ai_ctf_solver.py` - Command-line interface for the AI solver
+- `setup_ai_agent.py` - Configuration and setup system
+- `framework/network_handler.py` - Enhanced network connectivity
+- `framework/downloaders/` - Specialized content extractors
+- `framework/reports/` - Performance and capability reports
+
+### 🚀 Usage Examples
+```bash
+# Setup the AI agent
+python ai_ctf_solver.py --setup
+
+# Solve from file
+python ai_ctf_solver.py --file challenge.txt
+
+# Solve network challenge
+python ai_ctf_solver.py --network challenges.example.com 1337
+
+# Interactive mode
+python ai_ctf_solver.py --interactive
+
+# Batch processing
+python ai_ctf_solver.py --batch challenges/test_challenges/
+```
+
+### 📊 Performance Metrics
+- **Training Data**: 255 writeups processed
+- **Knowledge Base**: 28 techniques across multiple crypto categories
+- **Network Handling**: Automatic retry with 3 attempts and intelligent interaction
+- **Code Generation**: Template-based solutions for RSA, ECC, XOR, and network challenges
+- **Success Rate Tracking**: Real-time statistics and historical performance data
+
 ## [1.0.0] - 2025-08-25
 
 ### Added

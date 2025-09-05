@@ -1,0 +1,51 @@
+[
+  {
+    "timestamp": "2025-09-02T19:44:29.780914",
+    "challenge_preview": "\nChallenge: Decode the Message\nCan you decode this Base64 string?\nY3J5cHRve2Jhc2U2NF9pc19lYXN5fQ==\n            ",
+    "flag_found": "crypto{base64_is_easy}",
+    "method_used": "unknown",
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-02T19:44:32.271188",
+    "challenge_preview": "\nChallenge: Find the Flag\nHere's your flag: crypto{direct_flag_found}\nCan you spot it?\n            ",
+    "flag_found": "crypto{direct_flag_found}",
+    "method_used": "unknown",
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-02T19:44:39.357715",
+    "challenge_preview": "\nChallenge: XOR Cipher\nmessage: \"hello\"\nkey: \"crypto\"\nFind the flag by XORing the message with the key.\n            ",
+    "flag_found": "\u0017\u0015\u001c\u001b",
+    "method_used": "unknown",
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-02T19:51:36.642848",
+    "challenge_preview": "\n    Challenge: Base64 Decode\n    Can you decode this message?\n    Y3J5cHRve2Jhc2U2NF9pc19lYXN5fQ==\n    ",
+    "flag_found": "crypto{base64_is_easy}",
+    "method_used": "unknown",
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-02T19:52:28.126535",
+    "challenge_preview": "Advanced Cryptography Challenge:\nThis uses a custom encryption algorithm that combines multiple techniques.\nEncrypted message: \n4a6f686e20446f65206973206120676f6f64206d616e2e20486520776f726b7320617420",
+    "flag_found": "Decrypted message: .xzc xqdud dbheen dgs sz rjqnv dG .mzl cnnf z rh dnC mgnI\nFLAG not found in decrypted text.  Possible error in decryption.",
+    "method_used": "unknown",
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-02T19:52:31.996891",
+    "challenge_preview": "SGVsbG8gV29ybGQhIFRoaXMgaXMgYSBiYXNlNjQgZW5jb2RlZCBtZXNzYWdl\nRkxBRzogYmFzZTY0X2VuY29kaW5nX2NoYWxsZW5nZQ==",
+    "flag_found": "Decoded Message: Hello World! This is a base64 encoded message\nFLAG: base64_encoding_challenge",
+    "method_used": "unknown",
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-02T19:53:05.410882",
+    "challenge_preview": "# Cryptographic Challenge - Graph Recovery Attack\n\nYou are given an encrypted graph representation and need to recover the original query structure.\n\n## Challenge Description\n\nThis challenge implement",
+    "flag_found": "crypto{graph_recovery_attack_successful}",
+    "method_used": "unknown",
+    "success": true
+  }
+]

@@ -1,3 +1,3 @@
 """
-Core components del framework Crypto CTF Solver
+Core Framework - Módulos principales del framework CTF
 """

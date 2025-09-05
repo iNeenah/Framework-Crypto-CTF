@@ -1,0 +1,4 @@
+XOR Challenge:
+Encrypted (hex): 1a1b1c1d1e1f
+Key: single byte
+Hint: flag starts with 'crypto{'

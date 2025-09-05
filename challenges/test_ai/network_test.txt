@@ -1,0 +1,2 @@
+Connect to: nc example.com 1337
+Get the flag from the server.

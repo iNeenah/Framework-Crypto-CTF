@@ -1,0 +1,103 @@
+CryptoHack Writeup - Cryptohack Part 5: ELLIPTIC CURVES - HackMD
+============================================================
+
+Source: https://hackmd.io/@CayCon/BkDkrc8TT#STARTER
+Date: 2025-08-27T21:58:38.160898
+Challenges: 12
+
+Challenge: Background Reading
+Type: general_crypto
+Difficulty: intermediate
+Techniques: 
+Description: [image] - Flag là tên của tính chất giao hoán. - Flag: `crypto{abelian}` # STARTER
+Flags: ['Flag: `crypto{abelian}`']
+----------------------------------------
+
+Challenge: Point Negation
+Type: elliptic_curves
+Difficulty: beginner
+Techniques: sage, gf, ellipticcurve
+Description: [image] - Chall cho ta: $E: Y^2 = X^3 + 497 X + 1768, p: 9739.$ - Yêu cầu tính tọa độ $Q(x, y)$ với $P + Q = 0$ và $P(8045, 6936).$ - $Q = -P.$ ```sage sage: E = EllipticCurve(GF(9739),[497,1768]) sage: P = E(8045,6936) sage: -P (8045 : 2803 : 1) ``` - Flag: `crypto{8045,2803}`
+Flags: ['Flag: `crypto{8045,2803}`']
+----------------------------------------
+
+Challenge: Point Addition
+Type: elliptic_curves
+Difficulty: beginner
+Techniques: sage, gf, ellipticcurve
+Description: [image] - Chall cho ta cách tính $P+Q$. &gt;Algorithm for the addition of two points: P + Q (a) If P = O, then P + Q = Q. (b) Otherwise, if Q = O, then P + Q = P. (c) Otherwise, write P = (x1, y1) and Q = (x2, y2). (d) If x1 = x2 and y1 = −y2, then P + Q = O. (e) Otherwise: (e1) if P ≠ Q: λ = (y2 - y1) / (x2 - x1) (e2) if P = Q: λ = (3x12 + a) / 2y1 (f) x3 = λ2 − x1 − x2, y3 = λ(x1 −x3) − y1 (g) P + Q = (x3, y3). - Yêu cầu ta tính $S= P+P+Q+R$,
+Flags: ['Flag: `crypto{4215,2162}`']
+----------------------------------------
+
+Challenge: Scalar Multiplication
+Type: general_crypto
+Difficulty: intermediate
+Techniques: scalar multiplication, double and add, sage, gf, ellipticcurve
+Description: [image] - Chall yêu cầu ta tính $Q(x,y)= 7863 P$, với $E: Y2 = X3 + 497 X + 1768, p: 9739$; $P= (2339, 2213)$. - Với thông tin được cung cấp từ chall là: &gt;Double and Add algorithm for the scalar multiplication of point P by n. &gt;Input: P in E(Fp) and an integer n &gt; 0 &gt;1. Set Q = P and R = O. &gt;2. Loop while n &gt; 0. &gt;3. If n ≡ 1 mod 2, set R = R + Q. &gt;4. Set Q = 2 Q and n = ⌊n/2⌋. &gt;5. If n &gt; 0, continue with loop at Step
+Flags: ['Flag: `crypto{9467,2742}`']
+----------------------------------------
+
+Challenge: Curves and Logs
+Type: elliptic_curves
+Difficulty: intermediate
+Techniques: sha1, sage, gf, ellipticcurve
+Description: [image] - Chall yêu cầu ta tính x của $S(x, y)$ sau khi băm SHA1 với: $Q_A = n_AG$; $Q_B = n_BG$; shared secret : $S = n_A*Q_B = n_B * Q_A$. ```Python sage: E = EllipticCurve(GF(9739),[497,1768]) sage: QA = E(815,3190) sage: nB = 1829 sage: S = QA*nB sage: S (7929 : 707 : 1) ``` - SHA1 x= 7929 ta thu được flag. - Flag: `crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}`
+Flags: ['Flag: `crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}`']
+----------------------------------------
+
+Challenge: Efficient Exchange
+Type: general_crypto
+Difficulty: intermediate
+Techniques: parameter choice
+Description: [image] - Chall cho ta $q_x = 4726$ và $n_B = 6534$ và file [link] để decrypt ra flag. - Thay x vào $Y^2 = X^3 + 497 X + 1768$ để tìm $Y^2$ - Với $Y^2$ ta tính $Y$ dựa vào $p \equiv 3\ mod(4)$ và Symbol Legend. [image] - Flag: `crypto{3ff1c1ent_k3y_3xch4ng3}`. # PARAMETER CHOICE
+Flags: ['Flag: `crypto{3ff1c1ent_k3y_3xch4ng3}`']
+----------------------------------------
+
+Challenge: Smooth Criminal
+Type: symmetric
+Difficulty: intermediate
+Techniques: sha1, sage, gf, ellipticcurve
+Description: - Sử dụng hàm `discrete_log` để lấy giá trị n khi biết được $G$ và $Q_A$ do p nhỏ. ```Python from Crypto.Cipher import AES from Crypto.Util.Padding import pad, unpad import hashlib def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_flag(shared_secret: int, iv: str, ciphertext: str): sha1 = hashlib.sha1() sha1.update(str(shared_secret).encode(&#39;ascii&#39;)) key = sha1.digest()[:16
+Flags: []
+----------------------------------------
+
+Challenge: Exceptional Curves
+Type: elliptic_curves
+Difficulty: advanced
+Techniques: sha1, smart attack, sage, gf, ellipticcurve, lift_x, order
+Description: - Với E.order đã là số nguyên tố và chall thuộc dạng tấn công [link] ```Python from Crypto.Cipher import AES from Crypto.Util.number import inverse from Crypto.Util.Padding import pad, unpad from collections import namedtuple from random import randint import hashlib import os def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_fla
+Flags: []
+----------------------------------------
+
+Challenge: Micro Transmissions
+Type: symmetric
+Difficulty: intermediate
+Techniques: sha1, smooth criminal, sage, gf, ellipticcurve, lift_x, order
+Description: - Same as chall `Smooth Criminal` ```Python from Crypto.Cipher import AES from Crypto.Util.number import inverse from Crypto.Util.Padding import pad, unpad from collections import namedtuple from random import randint import hashlib import os def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_flag(shared_secret: int, iv: str, ciphertext: str): # Derive AES key from shared secret sha1
+Flags: []
+----------------------------------------
+
+Challenge: Elliptic Nodes
+Type: elliptic_curves
+Difficulty: intermediate
+Techniques: sage, gf
+Description: ```Python from Crypto.Util.number import long_to_bytes from collections import namedtuple from sage.all import * Point = namedtuple(&#34;Point&#34;, &#34;x y&#34;) p = 4368590184733545720227961182704359358435747188309319510520316493183539079703 Gx = 8742397231329873984594235438374590234800923467289367269837473862487362482 Gy = 225987949353410341392975247044711665782695329311463646299187580326445253608 Qx = 2582928974243465355371953056699793745022552378548418288211138499777818633265 Qy = 2421683
+Flags: []
+----------------------------------------
+
+Challenge: Digestive
+Type: general_crypto
+Difficulty: intermediate
+Techniques: 
+Description: ```Python import requests url = &#34;https://web.cryptohack.org/digestive/&#34; def sign(username): return requests.get(url + &#34;/sign/&#34; + username).json() def verify(msg, signature): return requests.get(url + &#34;/verify/&#34; + msg + &#34;/&#34; + signature).text username = &#34;a&#34; * 1000 payload = &#39;{&#34;admin&#34;: false, &#34;username&#34;: &#34;&#39; + username + &#39;&#34;, &#34;admin&#34;:true}&#39; out = sign(username) flag = verify(payload, out[&#34;signature&#3
+Flags: []
+----------------------------------------
+
+Challenge: Curveball
+Type: elliptic_curves
+Difficulty: intermediate
+Techniques: order
+Description: [image] &times;
+Flags: []
+----------------------------------------
+

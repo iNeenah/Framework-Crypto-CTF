@@ -1,0 +1,286 @@
+{
+  "source": "CryptoHack",
+  "url": "https://hackmd.io/@CayCon/BkDkrc8TT#STARTER",
+  "title": "Cryptohack Part 5: ELLIPTIC CURVES - HackMD",
+  "download_date": "2025-08-27T21:58:38.160898",
+  "type": "educational_writeup",
+  "challenges_count": 12,
+  "challenges": [
+    {
+      "name": "Background Reading",
+      "type": "general_crypto",
+      "description": "[image] - Flag là tên của tính chất giao hoán. - Flag: `crypto{abelian}` # STARTER",
+      "solution_codes": [],
+      "flags": [
+        "Flag: `crypto{abelian}`"
+      ],
+      "techniques": [],
+      "learning_points": [],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Point Negation",
+      "type": "elliptic_curves",
+      "description": "[image] - Chall cho ta: $E: Y^2 = X^3 + 497 X + 1768, p: 9739.$ - Yêu cầu tính tọa độ $Q(x, y)$ với $P + Q = 0$ và $P(8045, 6936).$ - $Q = -P.$ ```sage sage: E = EllipticCurve(GF(9739),[497,1768]) sage: P = E(8045,6936) sage: -P (8045 : 2803 : 1) ``` - Flag: `crypto{8045,2803}`",
+      "solution_codes": [
+        [
+          "sage",
+          "sage: E = EllipticCurve(GF(9739),[497,1768])\nsage: P = E(8045,6936)\nsage: -P\n(8045 : 2803 : 1)\n"
+        ]
+      ],
+      "flags": [
+        "Flag: `crypto{8045,2803}`"
+      ],
+      "techniques": [
+        "sage",
+        "gf",
+        "ellipticcurve"
+      ],
+      "learning_points": [
+        "sage_mathematics_usage",
+        "elliptic_curve_operations"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "name": "Point Addition",
+      "type": "elliptic_curves",
+      "description": "[image] - Chall cho ta cách tính $P+Q$. &gt;Algorithm for the addition of two points: P + Q (a) If P = O, then P + Q = Q. (b) Otherwise, if Q = O, then P + Q = P. (c) Otherwise, write P = (x1, y1) and Q = (x2, y2). (d) If x1 = x2 and y1 = −y2, then P + Q = O. (e) Otherwise: (e1) if P ≠ Q: λ = (y2 - y1) / (x2 - x1) (e2) if P = Q: λ = (3x12 + a) / 2y1 (f) x3 = λ2 − x1 − x2, y3 = λ(x1 −x3) − y1 (g) P + Q = (x3, y3). - Yêu cầu ta tính $S= P+P+Q+R$,",
+      "solution_codes": [
+        [
+          "sage",
+          "sage: E = EllipticCurve(GF(9739),[497,1768])\nsage: P = E(493, 5564)\nsage: Q = E(1539, 4742)\nsage: R = E(4403,5202)\nsage: P+ P+ Q+ R\n(4215 : 2162 : 1)\n"
+        ]
+      ],
+      "flags": [
+        "Flag: `crypto{4215,2162}`"
+      ],
+      "techniques": [
+        "sage",
+        "gf",
+        "ellipticcurve"
+      ],
+      "learning_points": [
+        "algorithm_implementation",
+        "sage_mathematics_usage",
+        "elliptic_curve_operations"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "name": "Scalar Multiplication",
+      "type": "general_crypto",
+      "description": "[image] - Chall yêu cầu ta tính $Q(x,y)= 7863 P$, với $E: Y2 = X3 + 497 X + 1768, p: 9739$; $P= (2339, 2213)$. - Với thông tin được cung cấp từ chall là: &gt;Double and Add algorithm for the scalar multiplication of point P by n. &gt;Input: P in E(Fp) and an integer n &gt; 0 &gt;1. Set Q = P and R = O. &gt;2. Loop while n &gt; 0. &gt;3. If n ≡ 1 mod 2, set R = R + Q. &gt;4. Set Q = 2 Q and n = ⌊n/2⌋. &gt;5. If n &gt; 0, continue with loop at Step",
+      "solution_codes": [
+        [
+          "sage",
+          "sage: E = EllipticCurve(GF(9739),[497,1768])\nsage: P = E(2339, 2213)\nsage: 7863*P\n(9467 : 2742 : 1)\n"
+        ]
+      ],
+      "flags": [
+        "Flag: `crypto{9467,2742}`"
+      ],
+      "techniques": [
+        "scalar multiplication",
+        "double and add",
+        "sage",
+        "gf",
+        "ellipticcurve"
+      ],
+      "learning_points": [
+        "algorithm_implementation",
+        "scalar_multiplication_optimization",
+        "sage_mathematics_usage",
+        "elliptic_curve_operations"
+      ],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Curves and Logs",
+      "type": "elliptic_curves",
+      "description": "[image] - Chall yêu cầu ta tính x của $S(x, y)$ sau khi băm SHA1 với: $Q_A = n_AG$; $Q_B = n_BG$; shared secret : $S = n_A*Q_B = n_B * Q_A$. ```Python sage: E = EllipticCurve(GF(9739),[497,1768]) sage: QA = E(815,3190) sage: nB = 1829 sage: S = QA*nB sage: S (7929 : 707 : 1) ``` - SHA1 x= 7929 ta thu được flag. - Flag: `crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}`",
+      "solution_codes": [
+        [
+          "Python",
+          "sage: E = EllipticCurve(GF(9739),[497,1768])\nsage: QA = E(815,3190)\nsage: nB = 1829\nsage: S = QA*nB\nsage: S\n(7929 : 707 : 1)\n"
+        ]
+      ],
+      "flags": [
+        "Flag: `crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}`"
+      ],
+      "techniques": [
+        "sha1",
+        "sage",
+        "gf",
+        "ellipticcurve"
+      ],
+      "learning_points": [
+        "sage_mathematics_usage",
+        "elliptic_curve_operations"
+      ],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Efficient Exchange",
+      "type": "general_crypto",
+      "description": "[image] - Chall cho ta $q_x = 4726$ và $n_B = 6534$ và file [link] để decrypt ra flag. - Thay x vào $Y^2 = X^3 + 497 X + 1768$ để tìm $Y^2$ - Với $Y^2$ ta tính $Y$ dựa vào $p \\equiv 3\\ mod(4)$ và Symbol Legend. [image] - Flag: `crypto{3ff1c1ent_k3y_3xch4ng3}`. # PARAMETER CHOICE",
+      "solution_codes": [],
+      "flags": [
+        "Flag: `crypto{3ff1c1ent_k3y_3xch4ng3}`"
+      ],
+      "techniques": [
+        "parameter choice"
+      ],
+      "learning_points": [],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Smooth Criminal",
+      "type": "symmetric",
+      "description": "- Sử dụng hàm `discrete_log` để lấy giá trị n khi biết được $G$ và $Q_A$ do p nhỏ. ```Python from Crypto.Cipher import AES from Crypto.Util.Padding import pad, unpad import hashlib def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_flag(shared_secret: int, iv: str, ciphertext: str): sha1 = hashlib.sha1() sha1.update(str(shared_secret).encode(&#39;ascii&#39;)) key = sha1.digest()[:16",
+      "solution_codes": [
+        [
+          "Python",
+          "from Crypto.Cipher import AES\nfrom Crypto.Util.Padding import pad, unpad\nimport hashlib\ndef is_pkcs7_padded(message):\n    padding = message[-message[-1]:]\n    return all(padding[i] == len(padding) for i in range(0, len(padding)))\ndef decrypt_flag(shared_secret: int, iv: str, ciphertext: str):\n    sha1 = hashlib.sha1()\n    sha1.update(str(shared_secret).encode(&#39;ascii&#39;))\n    key = sha1.digest()[:16]\n    ciphertext = bytes.fromhex(ciphertext)\n    iv = bytes.fromhex(iv)\n    cipher = AES.new(key, AES.MODE_CBC, iv)\n    plaintext = cipher.decrypt(ciphertext)\n    if is_pkcs7_padded(plaintext):\n        return unpad(plaintext, 16)\n    else:\n        return plaintext\np = 310717010502520989590157367261876774703\na = 2\nb = 3\nE = EllipticCurve(GF(p),[a,b])\nQ_A = E(280810182131414898730378982766101210916, 291506490768054478159835604632710368904)\nQ_B = E(272640099140026426377756188075937988094, 51062462309521034358726608268084433317)\nG = E(179210853392303317793440285562762725654, 105268671499942631758568591033409611165)\nn = G.discrete_log(Q_A)\nprint(n)\nprint(&#34;SECRET:&#34;, n*Q_B)\nx = 171172176587165701252669133307091694084\ndata = {&#39;iv&#39;: &#39;07e2628b590095a5e332d397b8a59aa7&#39;, &#39;encrypted_flag&#39;: &#39;8220b7c47b36777a737f5ef9caa2814cf20c1c1ef496ec21a9b4833da24a008d0870d3ac3a6ad80065c138a2ed6136af&#39;}\niv = data[&#34;iv&#34;]\nencrypted_flag = data[&#39;encrypted_flag&#39;]\nprint(decrypt_flag(x, iv,encrypted_flag))\n"
+        ]
+      ],
+      "flags": [],
+      "techniques": [
+        "sha1",
+        "sage",
+        "gf",
+        "ellipticcurve"
+      ],
+      "learning_points": [
+        "sage_mathematics_usage",
+        "elliptic_curve_operations",
+        "discrete_logarithm_problem"
+      ],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Exceptional Curves",
+      "type": "elliptic_curves",
+      "description": "- Với E.order đã là số nguyên tố và chall thuộc dạng tấn công [link] ```Python from Crypto.Cipher import AES from Crypto.Util.number import inverse from Crypto.Util.Padding import pad, unpad from collections import namedtuple from random import randint import hashlib import os def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_fla",
+      "solution_codes": [
+        [
+          "Python",
+          "from Crypto.Cipher import AES\nfrom Crypto.Util.number import inverse\nfrom Crypto.Util.Padding import pad, unpad\nfrom collections import namedtuple\nfrom random import randint\nimport hashlib\nimport os\n\ndef is_pkcs7_padded(message):\n    padding = message[-message[-1]:]\n    return all(padding[i] == len(padding) for i in range(0, len(padding)))\ndef decrypt_flag(shared_secret: int, iv: str, ciphertext: str):\n    # Derive AES key from shared secret\n    sha1 = hashlib.sha1()\n    sha1.update(str(shared_secret).encode(&#39;ascii&#39;))\n    key = sha1.digest()[:16]\n    # Decrypt flag\n    ciphertext = bytes.fromhex(ciphertext)\n    iv = bytes.fromhex(iv)\n    cipher = AES.new(key, AES.MODE_CBC, iv)\n    plaintext = cipher.decrypt(ciphertext)\n\n    if is_pkcs7_padded(plaintext):\n        return unpad(plaintext, 16).decode(&#39;ascii&#39;)\n    else:\n        return plaintext.decode(&#39;ascii&#39;)\ndef SmartAttack(P,Q,p):\n    E = P.curve()\n    Eqp = EllipticCurve(Qp(p, 2), [ ZZ(t) + randint(0,p)*p for t in E.a_invariants() ])\n\n    P_Qps = Eqp.lift_x(ZZ(P.xy()[0]), all=True)\n    for P_Qp in P_Qps:\n        if GF(p)(P_Qp.xy()[1]) == P.xy()[1]:\n            break\n\n    Q_Qps = Eqp.lift_x(ZZ(Q.xy()[0]), all=True)\n    for Q_Qp in Q_Qps:\n        if GF(p)(Q_Qp.xy()[1]) == Q.xy()[1]:\n            break\n    p_times_P = p*P_Qp\n    p_times_Q = p*Q_Qp\n    x_P,y_P = p_times_P.xy()\n    x_Q,y_Q = p_times_Q.xy()\n    phi_P = -(x_P/y_P)\n    phi_Q = -(x_Q/y_Q)\n    k = phi_Q/phi_P\n    return ZZ(k)\np = 0xa15c4fb663a578d8b2496d3151a946119ee42695e18e13e90600192b1d0abdbb6f787f90c8d102ff88e284dd4526f5f6b6c980bf88f1d0490714b67e8a2a2b77\na = 0x5e009506fcc7eff573bc960d88638fe25e76a9b6c7caeea072a27dcd1fa46abb15b7b6210cf90caba982893ee2779669bac06e267013486b22ff3e24abae2d42\nb = 0x2ce7d1ca4493b0977f088f6d30d9241f8048fdea112cc385b793bce953998caae680864a7d3aa437ea3ffd1441ca3fb352b0b710bb3f053e980e503be9a7fece\nE = EllipticCurve(GF(p), [a, b])\nG = E(3034712809375537908102988750113382444008758539448972750581525810900634243392172703684905257490982543775233630011707375189041302436945106395617312498769005,4986645098582616415690074082237817624424333339074969364527548107042876175480894132576399611027847402879885574130125050842710052291870268101817275410204850)\nb_x = 0x7f0489e4efe6905f039476db54f9b6eac654c780342169155344abc5ac90167adc6b8dabacec643cbe420abffe9760cbc3e8a2b508d24779461c19b20e242a38\nb_y = 0xdd04134e747354e5b9618d8cb3f60e03a74a709d4956641b234daa8a65d43df34e18d00a59c070801178d198e8905ef670118c15b0906d3a00a662d3a2736bf\nB = E(b_x, b_y)\nA = E(4748198372895404866752111766626421927481971519483471383813044005699388317650395315193922226704604937454742608233124831870493636003725200307683939875286865, 2421873309002279841021791369884483308051497215798017509805302041102468310636822060707350789776065212606890489706597369526562336256272258544226688832663757)\nn_A = SmartAttack(G, A, p)\nx = (ZZ(n_A)*B)[0]\ndata = {&#39;iv&#39;: &#39;719700b2470525781cc844db1febd994&#39;, &#39;encrypted_flag&#39;: &#39;335470f413c225b705db2e930b9d460d3947b3836059fb890b044e46cbb343f0&#39;}\niv = data[&#34;iv&#34;]\nencrypted_flag = data[&#39;encrypted_flag&#39;]\nprint(decrypt_flag(x, iv,encrypted_flag))\n"
+        ]
+      ],
+      "flags": [],
+      "techniques": [
+        "sha1",
+        "smart attack",
+        "sage",
+        "gf",
+        "ellipticcurve",
+        "lift_x",
+        "order"
+      ],
+      "learning_points": [
+        "sage_mathematics_usage",
+        "elliptic_curve_operations"
+      ],
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Micro Transmissions",
+      "type": "symmetric",
+      "description": "- Same as chall `Smooth Criminal` ```Python from Crypto.Cipher import AES from Crypto.Util.number import inverse from Crypto.Util.Padding import pad, unpad from collections import namedtuple from random import randint import hashlib import os def is_pkcs7_padded(message): padding = message[-message[-1]:] return all(padding[i] == len(padding) for i in range(0, len(padding))) def decrypt_flag(shared_secret: int, iv: str, ciphertext: str): # Derive AES key from shared secret sha1",
+      "solution_codes": [
+        [
+          "Python",
+          "from Crypto.Cipher import AES\nfrom Crypto.Util.number import inverse\nfrom Crypto.Util.Padding import pad, unpad\nfrom collections import namedtuple\nfrom random import randint\nimport hashlib\nimport os\n\ndef is_pkcs7_padded(message):\n    padding = message[-message[-1]:]\n    return all(padding[i] == len(padding) for i in range(0, len(padding)))\n\n\ndef decrypt_flag(shared_secret: int, iv: str, ciphertext: str):\n    # Derive AES key from shared secret\n    sha1 = hashlib.sha1()\n    sha1.update(str(shared_secret).encode(&#39;ascii&#39;))\n    key = sha1.digest()[:16]\n    # Decrypt flag\n    ciphertext = bytes.fromhex(ciphertext)\n    iv = bytes.fromhex(iv)\n    cipher = AES.new(key, AES.MODE_CBC, iv)\n    plaintext = cipher.decrypt(ciphertext)\n\n    if is_pkcs7_padded(plaintext):\n        return unpad(plaintext, 16).decode(&#39;ascii&#39;)\n    else:\n        return plaintext.decode(&#39;ascii&#39;)\n\np = 99061670249353652702595159229088680425828208953931838069069584252923270946291\nE = EllipticCurve(GF(p), [1,4]) \nG = E(43190960452218023575787899214023014938926631792651638044680168600989609069200, 20971936269255296908588589778128791635639992476076894152303569022736123671173)\nA = E.lift_x(87360200456784002948566700858113190957688355783112995047798140117594305287669)\nB = E.lift_x(6082896373499126624029343293750138460137531774473450341235217699497602895121)\norder = G.order()\nprint(factor(order))\n\nmax_value_n = 18446744073709551615\n\nresults = []\nfactors = []\nmul = 1\nfor prime, exponent in factor(order):\n    e = (order//(prime**exponent))\n    G_new = G*e\n    A_new = A*e\n    dlog = G_new.discrete_log(A_new)\n    print(prime, dlog)\n    results.append(dlog)\n    factors.append(prime**exponent)\n    mul *= prime\n    if mul &gt; max_value_n:\n        break\n\nn_A = crt(results,factors)\nprint(&#34;Found:&#34;,n_A)\n\nx = (ZZ(n_A)*B)[0]\ndata = {&#39;iv&#39;: &#39;ceb34a8c174d77136455971f08641cc5&#39;, &#39;encrypted_flag&#39;: &#39;b503bf04df71cfbd3f464aec2083e9b79c825803a4d4a43697889ad29eb75453&#39;}\niv = data[&#34;iv&#34;]\nencrypted_flag = data[&#39;encrypted_flag&#39;]\nprint(decrypt_flag(x, iv,encrypted_flag))\n"
+        ]
+      ],
+      "flags": [],
+      "techniques": [
+        "sha1",
+        "smooth criminal",
+        "sage",
+        "gf",
+        "ellipticcurve",
+        "lift_x",
+        "order"
+      ],
+      "learning_points": [
+        "sage_mathematics_usage",
+        "elliptic_curve_operations",
+        "discrete_logarithm_problem"
+      ],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Elliptic Nodes",
+      "type": "elliptic_curves",
+      "description": "```Python from Crypto.Util.number import long_to_bytes from collections import namedtuple from sage.all import * Point = namedtuple(&#34;Point&#34;, &#34;x y&#34;) p = 4368590184733545720227961182704359358435747188309319510520316493183539079703 Gx = 8742397231329873984594235438374590234800923467289367269837473862487362482 Gy = 225987949353410341392975247044711665782695329311463646299187580326445253608 Qx = 2582928974243465355371953056699793745022552378548418288211138499777818633265 Qy = 2421683",
+      "solution_codes": [
+        [
+          "Python",
+          "from Crypto.Util.number import long_to_bytes\nfrom collections import namedtuple\nfrom sage.all import *\n\nPoint = namedtuple(&#34;Point&#34;, &#34;x y&#34;)\np = 4368590184733545720227961182704359358435747188309319510520316493183539079703\nGx = 8742397231329873984594235438374590234800923467289367269837473862487362482\nGy = 225987949353410341392975247044711665782695329311463646299187580326445253608\nQx = 2582928974243465355371953056699793745022552378548418288211138499777818633265\nQy = 2421683573446497972507172385881793260176370025964652384676141384239699096612\nres1 = (Gy ** 2 - Gx ** 3) % p \nres2 = (Qy ** 2 - Qx ** 3) % p \na = ((res1 - res2) * pow((Gx - Qx), -1, p)) % p \nb = (res1 - a * Gx) % p \nprint(f&#34;{a = }&#34;)\nprint(f&#34;{b = }&#34;)\nR = PolynomialRing(GF(p), &#39;x&#39;)\nx = R.gen()\nf = x^3 + a * x + b\nshift = f.roots()\nprint(shift)\nshift = 1557923326969252180825193218688702224840389936248863823173183835359957757721 \nf2 = f.subs(x=x+shift)\nprint(&#39;Shifted curve:&#39;, f2.factor())\nt = GF(p)(305179796174210822247618473361747316085422620437271958999235012896334193460).square_root()\nprint(t)\n_Qx, _Qy = (Qx - shift, Qy)\n_Gx, _Gy = (Gx - shift, Gy)\nv = (_Qy + t*_Qx)/(_Qy - t*_Qx) % p\nu = (_Gy + t*_Gx)/(_Gy - t*_Gx) % p\nprint(f&#34;{v = }, {u = }&#34;)\nd = discrete_log(v, u)\nlong_to_bytes(d)\n"
+        ]
+      ],
+      "flags": [],
+      "techniques": [
+        "sage",
+        "gf"
+      ],
+      "learning_points": [
+        "sage_mathematics_usage",
+        "discrete_logarithm_problem"
+      ],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Digestive",
+      "type": "general_crypto",
+      "description": "```Python import requests url = &#34;https://web.cryptohack.org/digestive/&#34; def sign(username): return requests.get(url + &#34;/sign/&#34; + username).json() def verify(msg, signature): return requests.get(url + &#34;/verify/&#34; + msg + &#34;/&#34; + signature).text username = &#34;a&#34; * 1000 payload = &#39;{&#34;admin&#34;: false, &#34;username&#34;: &#34;&#39; + username + &#39;&#34;, &#34;admin&#34;:true}&#39; out = sign(username) flag = verify(payload, out[&#34;signature&#3",
+      "solution_codes": [
+        [
+          "Python",
+          "import requests\nurl = &#34;https://web.cryptohack.org/digestive/&#34;\ndef sign(username):\n    return requests.get(url + &#34;/sign/&#34; + username).json()\ndef verify(msg, signature):\n    return requests.get(url + &#34;/verify/&#34; + msg + &#34;/&#34; + signature).text\nusername = &#34;a&#34; * 1000\npayload = &#39;{&#34;admin&#34;: false, &#34;username&#34;: &#34;&#39; + username + &#39;&#34;, &#34;admin&#34;:true}&#39;\n\nout = sign(username)\nflag = verify(payload, out[&#34;signature&#34;])\nprint(flag)\n"
+        ]
+      ],
+      "flags": [],
+      "techniques": [],
+      "learning_points": [],
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Curveball",
+      "type": "elliptic_curves",
+      "description": "[image] &times;",
+      "solution_codes": [],
+      "flags": [],
+      "techniques": [
+        "order"
+      ],
+      "learning_points": [],
+      "difficulty": "intermediate"
+    }
+  ],
+  "techniques_summary": [
+    "lift_x",
+    "order",
+    "gf",
+    "parameter choice",
+    "smooth criminal",
+    "double and add",
+    "ellipticcurve",
+    "smart attack",
+    "sha1",
+    "sage",
+    "scalar multiplication"
+  ],
+  "metadata": {
+    "difficulty": "starter_to_advanced",
+    "category": "elliptic_curves",
+    "language": "python_sage",
+    "tools": [
+      "sage",
+      "python",
+      "cryptography"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "ai_providers": {
+    "gemini": {
+      "api_key": "",
+      "model": "gemini-1.5-pro",
+      "enabled": false
+    },
+    "openai": {
+      "api_key": "",
+      "model": "gpt-4",
+      "enabled": false
+    },
+    "anthropic": {
+      "api_key": "",
+      "model": "claude-3-sonnet",
+      "enabled": false
+    }
+  },
+  "network_settings": {
+    "default_timeout": 30,
+    "max_retries": 3,
+    "retry_delay": 1,
+    "buffer_size": 4096,
+    "common_ports": [
+      1337,
+      8080,
+      9999,
+      31337,
+      12345
+    ]
+  },
+  "solver_settings": {
+    "max_execution_time": 60,
+    "auto_save_solutions": true,
+    "verbose_output": true,
+    "parallel_solving": false
+  },
+  "expert_knowledge": {
+    "use_knowledge_base": true,
+    "confidence_threshold": 0.6,
+    "max_techniques_per_challenge": 5
+  }
+}

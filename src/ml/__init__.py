@@ -1,3 +1,3 @@
 """
-Componentes de Machine Learning para aprendizaje automático
+ML Framework - Sistema de Machine Learning que aprende de writeups profesionales
 """

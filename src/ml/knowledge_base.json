@@ -1,0 +1,70 @@
+{
+  "writeups_count": 255,
+  "elliptic_curves": {
+    "techniques": [
+      "sha1",
+      "smart attack",
+      "sage",
+      "gf",
+      "ellipticcurve",
+      "order",
+      "lift_x"
+    ],
+    "attacks": [],
+    "tools": [
+      "sage",
+      "python"
+    ],
+    "difficulty_levels": {
+      "beginner": 4,
+      "intermediate": 6,
+      "advanced": 2
+    },
+    "common_patterns": []
+  },
+  "rsa": {
+    "techniques": [],
+    "attacks": [],
+    "small_roots": [],
+    "factorization_methods": []
+  },
+  "diffie_hellman": {
+    "attacks": [],
+    "discrete_log_methods": []
+  },
+  "symmetric": {
+    "ciphers": [
+      "aes"
+    ],
+    "attacks": [
+      "sha1",
+      "sage",
+      "gf",
+      "ellipticcurve",
+      "order",
+      "smooth criminal",
+      "lift_x"
+    ],
+    "key_recovery": []
+  },
+  "recent_updates": [
+    {
+      "date": "2025-08-27T21:59:38.797105",
+      "source": "cryptohack_elliptic_curves_20250827_215838.json",
+      "challenges_added": 12,
+      "source_url": "https://hackmd.io/@CayCon/BkDkrc8TT#STARTER"
+    },
+    {
+      "date": "2025-08-27T22:07:55.521778",
+      "source": "cryptohack_elliptic_curves_20250827_215838.json",
+      "challenges_added": 12,
+      "source_url": "https://hackmd.io/@CayCon/BkDkrc8TT#STARTER"
+    },
+    {
+      "date": "2025-08-27T22:07:55.523119",
+      "source": "giacomopope_crypto_20250827_220730.json",
+      "challenges_added": 0,
+      "source_url": "https://github.com/GiacomoPope/giacomopope.github.io"
+    }
+  ]
+}
